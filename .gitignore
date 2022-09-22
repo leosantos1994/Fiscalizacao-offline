@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DAO/bin/Debug
+/.vs
+/DAO/obj/Debug
+/Models/obj
+/Models/Models.csproj.user
+/obj

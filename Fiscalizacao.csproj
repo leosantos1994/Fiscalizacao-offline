@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{157F4444-6A1E-4BB6-AE59-1F6618C725FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Fiscalizacao</RootNamespace>
+    <AssemblyName>Fiscalizacao</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HBSIS.Core">
+      <HintPath>packages\quellon\HBSIS.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HBSIS.Core.Execucao, Version=6.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\HBSIS.Core.Execucao.dll</HintPath>
+    </Reference>
+    <Reference Include="HBSIS.Core.Model, Version=6.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\HBSIS.Core.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="HBSIS.Core.Quellon, Version=6.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\HBSIS.Core.Quellon.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjMod">
+      <HintPath>packages\quellon\ObjMod.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjMod.GenID">
+      <HintPath>packages\quellon\ObjMod.GenID.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjWS">
+      <HintPath>packages\quellon\ObjWS.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.AppRequest">
+      <HintPath>packages\quellon\Quellon.AppRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.AppRequest.Utils">
+      <HintPath>packages\quellon\Quellon.AppRequest.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Base">
+      <HintPath>packages\quellon\Quellon.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.CustomClients, Version=6.1.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\Quellon.CustomClients.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Data, Version=6.1.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\Quellon.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Data.History">
+      <HintPath>packages\quellon\Quellon.Data.History.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Data.Interfaces">
+      <HintPath>packages\quellon\Quellon.Data.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Exception">
+      <HintPath>packages\quellon\Quellon.Exception.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Farm, Version=6.1.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\Quellon.Farm.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Formula">
+      <HintPath>packages\quellon\Quellon.Formula.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Helper, Version=6.1.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\Quellon.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.HTTPS">
+      <HintPath>packages\quellon\Quellon.HTTPS.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Lib">
+      <HintPath>packages\quellon\Quellon.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.LoginManager">
+      <HintPath>packages\quellon\Quellon.LoginManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.MSSQL">
+      <HintPath>packages\quellon\Quellon.MSSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Params, Version=6.1.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\Quellon.Params.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Params.Helper, Version=6.1.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\Quellon.Params.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Params.Manager">
+      <HintPath>packages\quellon\Quellon.Params.Manager.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.ParamsManager">
+      <HintPath>packages\quellon\Quellon.ParamsManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Performance.Interface, Version=6.1.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\quellon\Quellon.Performance.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.PlainText">
+      <HintPath>packages\quellon\Quellon.PlainText.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Resources">
+      <HintPath>packages\quellon\Quellon.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Security">
+      <HintPath>packages\quellon\Quellon.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.SMTP">
+      <HintPath>packages\quellon\Quellon.SMTP.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Utility">
+      <HintPath>packages\quellon\Quellon.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Utility.File">
+      <HintPath>packages\quellon\Quellon.Utility.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Utility.Upload">
+      <HintPath>packages\quellon\Quellon.Utility.Upload.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Utility.WSBaseProxy">
+      <HintPath>packages\quellon\Quellon.Utility.WSBaseProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Utility.XML2SQLProxy">
+      <HintPath>packages\quellon\Quellon.Utility.XML2SQLProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.Version">
+      <HintPath>packages\quellon\Quellon.Version.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.WEB.Data">
+      <HintPath>packages\quellon\Quellon.WEB.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Quellon.WEB.WS">
+      <HintPath>packages\quellon\Quellon.WEB.WS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.116.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.116.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmFormacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormacao.Designer.cs">
+      <DependentUpon>frmFormacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFinanceiro.Designer.cs">
+      <DependentUpon>frmFinanceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOcorrencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOcorrencias.Designer.cs">
+      <DependentUpon>frmOcorrencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcessos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcessos.Designer.cs">
+      <DependentUpon>frmProcessos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProtocolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProtocolo.Designer.cs">
+      <DependentUpon>frmProtocolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTramitesProcessuais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTramitesProcessuais.Designer.cs">
+      <DependentUpon>frmTramitesProcessuais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfracoes.Designer.cs">
+      <DependentUpon>frmInfracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotificacao.Designer.cs">
+      <DependentUpon>frmNotificacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRTeART.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRTeART.Designer.cs">
+      <DependentUpon>frmRTeART.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastros.Designer.cs">
+      <DependentUpon>frmCadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmFormacao.resx">
+      <DependentUpon>frmFormacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfracoes.resx">
+      <DependentUpon>frmInfracoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFinanceiro.resx">
+      <DependentUpon>frmFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotificacao.resx">
+      <DependentUpon>frmNotificacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOcorrencias.resx">
+      <DependentUpon>frmOcorrencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcessos.resx">
+      <DependentUpon>frmProcessos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProtocolo.resx">
+      <DependentUpon>frmProtocolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTramitesProcessuais.resx">
+      <DependentUpon>frmTramitesProcessuais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRTeART.resx">
+      <DependentUpon>frmRTeART.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="frmCadastros.resx">
+      <DependentUpon>frmCadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fundojpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DAO\DAO.csproj">
+      <Project>{4901490f-11e0-4a8b-b254-d24c6ea48863}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="Models\Models.csproj">
+      <Project>{A937FC02-690E-4A65-92DA-ADF24D44590A}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
