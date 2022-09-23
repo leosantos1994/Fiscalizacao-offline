@@ -47,6 +47,7 @@
     <Compile Include="FormacaoAcademicaModel.cs" />
     <Compile Include="HistoricoInscricaoModel.cs" />
     <Compile Include="HistoricoOcorrenciaModel.cs" />
+    <Compile Include="IgnorePropertyAttribute.cs" />
     <Compile Include="ModelBase.cs" />
     <Compile Include="OutrosContatosModel.cs" />
     <Compile Include="PessoaModel.cs" />

@@ -67,10 +67,10 @@ namespace Fiscalizacao
             this.lblSituacao = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Complemento = new System.Windows.Forms.TextBox();
-            this.lblComplemento = new System.Windows.Forms.Label();
             this.ComplementoSituacao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Complemento = new System.Windows.Forms.TextBox();
+            this.lblComplemento = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -145,7 +145,7 @@ namespace Fiscalizacao
             // 
             // lblValorLiquido
             // 
-            this.lblValorLiquido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValorLiquido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorLiquido.AutoSize = true;
             this.lblValorLiquido.Location = new System.Drawing.Point(464, 18);
             this.lblValorLiquido.Name = "lblValorLiquido";
@@ -192,6 +192,7 @@ namespace Fiscalizacao
             // 
             // lblValorReajustado
             // 
+            this.lblValorReajustado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorReajustado.AutoSize = true;
             this.lblValorReajustado.Location = new System.Drawing.Point(444, 48);
             this.lblValorReajustado.Name = "lblValorReajustado";
@@ -210,6 +211,8 @@ namespace Fiscalizacao
             // 
             // lblSaldo
             // 
+            this.lblSaldo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSaldo.AutoSize = true;
             this.lblSaldo.Location = new System.Drawing.Point(12, 51);
             this.lblSaldo.Name = "lblSaldo";
@@ -219,6 +222,8 @@ namespace Fiscalizacao
             // 
             // lblValorBruto
             // 
+            this.lblValorBruto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblValorBruto.AutoSize = true;
             this.lblValorBruto.Location = new System.Drawing.Point(12, 18);
             this.lblValorBruto.Name = "lblValorBruto";
@@ -234,7 +239,6 @@ namespace Fiscalizacao
             this.lblVencimento.Size = new System.Drawing.Size(63, 13);
             this.lblVencimento.TabIndex = 56;
             this.lblVencimento.Text = "Vencimento";
-            this.lblVencimento.Click += new System.EventHandler(this.lblVencimento_Click);
             // 
             // lblParcela
             // 
@@ -277,6 +281,8 @@ namespace Fiscalizacao
             // 
             // ValorBruto
             // 
+            this.ValorBruto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ValorBruto.Location = new System.Drawing.Point(50, 15);
             this.ValorBruto.Name = "ValorBruto";
             this.ValorBruto.Size = new System.Drawing.Size(377, 20);
@@ -284,6 +290,8 @@ namespace Fiscalizacao
             // 
             // ValorSaldo
             // 
+            this.ValorSaldo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ValorSaldo.Location = new System.Drawing.Point(50, 48);
             this.ValorSaldo.Name = "ValorSaldo";
             this.ValorSaldo.Size = new System.Drawing.Size(377, 20);
@@ -298,7 +306,7 @@ namespace Fiscalizacao
             // 
             // Reajustado
             // 
-            this.Reajustado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Reajustado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Reajustado.Location = new System.Drawing.Point(514, 48);
             this.Reajustado.Name = "Reajustado";
             this.Reajustado.Size = new System.Drawing.Size(340, 20);
@@ -313,7 +321,7 @@ namespace Fiscalizacao
             // 
             // ValorLiquido
             // 
-            this.ValorLiquido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ValorLiquido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ValorLiquido.Location = new System.Drawing.Point(514, 18);
             this.ValorLiquido.Name = "ValorLiquido";
             this.ValorLiquido.Size = new System.Drawing.Size(340, 20);
@@ -427,25 +435,6 @@ namespace Fiscalizacao
             this.panel2.Size = new System.Drawing.Size(863, 426);
             this.panel2.TabIndex = 78;
             // 
-            // Complemento
-            // 
-            this.Complemento.Location = new System.Drawing.Point(6, 303);
-            this.Complemento.Multiline = true;
-            this.Complemento.Name = "Complemento";
-            this.Complemento.Size = new System.Drawing.Size(848, 120);
-            this.Complemento.TabIndex = 77;
-            this.Complemento.TextChanged += new System.EventHandler(this.txtFinanceiroComplemento_TextChanged);
-            // 
-            // lblComplemento
-            // 
-            this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(4, 286);
-            this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(71, 13);
-            this.lblComplemento.TabIndex = 78;
-            this.lblComplemento.Text = "Complemento";
-            this.lblComplemento.Click += new System.EventHandler(this.lblComplemento_Click);
-            // 
             // ComplementoSituacao
             // 
             this.ComplementoSituacao.Location = new System.Drawing.Point(8, 136);
@@ -462,6 +451,23 @@ namespace Fiscalizacao
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 80;
             this.label1.Text = "Complemento";
+            // 
+            // Complemento
+            // 
+            this.Complemento.Location = new System.Drawing.Point(6, 303);
+            this.Complemento.Multiline = true;
+            this.Complemento.Name = "Complemento";
+            this.Complemento.Size = new System.Drawing.Size(848, 120);
+            this.Complemento.TabIndex = 77;
+            // 
+            // lblComplemento
+            // 
+            this.lblComplemento.AutoSize = true;
+            this.lblComplemento.Location = new System.Drawing.Point(4, 286);
+            this.lblComplemento.Name = "lblComplemento";
+            this.lblComplemento.Size = new System.Drawing.Size(71, 13);
+            this.lblComplemento.TabIndex = 78;
+            this.lblComplemento.Text = "Complemento";
             // 
             // frmFinanceiro
             // 

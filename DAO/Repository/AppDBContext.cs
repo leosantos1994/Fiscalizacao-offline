@@ -13,7 +13,7 @@ namespace Fiscalizacao.Repository
         //    }, true)
         //{ }
 
-        public AppDBContext() : base("mydb11")
+        public AppDBContext() : base("mydb2")
         {
 
         }

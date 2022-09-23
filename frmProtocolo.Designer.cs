@@ -103,6 +103,8 @@ namespace Fiscalizacao
             // 
             // lblAssunto
             // 
+            this.lblAssunto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAssunto.AutoSize = true;
             this.lblAssunto.Location = new System.Drawing.Point(9, 367);
             this.lblAssunto.Name = "lblAssunto";
@@ -248,6 +250,8 @@ namespace Fiscalizacao
             // 
             // lblObservação
             // 
+            this.lblObservação.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblObservação.AutoSize = true;
             this.lblObservação.Location = new System.Drawing.Point(9, 407);
             this.lblObservação.Name = "lblObservação";

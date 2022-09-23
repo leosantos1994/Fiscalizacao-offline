@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Models;
+using System;
 
 namespace Fiscalizacao.Models
 {
     public class FinanceiroModel : ModelBase
     {
         public int PessoaId { get; set; }
+        [IgnorePropertyAttribute]
         public virtual PessoaModel Pessoa { get; set; }
 
         public decimal ValorBruto { get; set; }

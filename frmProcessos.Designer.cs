@@ -130,9 +130,9 @@ namespace Fiscalizacao
             this.NumeroDaNotificacao,
             this.DataRecebimento,
             this.PrazoRegularizacao});
-            this.dgvProcessosNotificacoes.Location = new System.Drawing.Point(6, 6);
+            this.dgvProcessosNotificacoes.Location = new System.Drawing.Point(3, 0);
             this.dgvProcessosNotificacoes.Name = "dgvProcessosNotificacoes";
-            this.dgvProcessosNotificacoes.Size = new System.Drawing.Size(837, 250);
+            this.dgvProcessosNotificacoes.Size = new System.Drawing.Size(910, 246);
             this.dgvProcessosNotificacoes.TabIndex = 1;
             this.dgvProcessosNotificacoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcessosNotificacoes_CellDoubleClick);
             // 
@@ -162,10 +162,11 @@ namespace Fiscalizacao
             this.Autuado,
             this.Fiscal,
             this.Situacao});
-            this.dgvProcessosInfracoes.Location = new System.Drawing.Point(6, 6);
+            this.dgvProcessosInfracoes.Location = new System.Drawing.Point(3, 0);
             this.dgvProcessosInfracoes.Name = "dgvProcessosInfracoes";
-            this.dgvProcessosInfracoes.Size = new System.Drawing.Size(837, 250);
+            this.dgvProcessosInfracoes.Size = new System.Drawing.Size(910, 246);
             this.dgvProcessosInfracoes.TabIndex = 2;
+            this.dgvProcessosInfracoes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcessosInfracoes_CellContentClick);
             this.dgvProcessosInfracoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcessosInfracoes_CellDoubleClick);
             // 
             // Ano
@@ -193,14 +194,16 @@ namespace Fiscalizacao
             // 
             // dgvProcessosTramitesProcessuais
             // 
+            this.dgvProcessosTramitesProcessuais.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProcessosTramitesProcessuais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProcessosTramitesProcessuais.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Data,
             this.Fase,
             this.Processo});
-            this.dgvProcessosTramitesProcessuais.Location = new System.Drawing.Point(3, 6);
+            this.dgvProcessosTramitesProcessuais.Location = new System.Drawing.Point(3, 0);
             this.dgvProcessosTramitesProcessuais.Name = "dgvProcessosTramitesProcessuais";
-            this.dgvProcessosTramitesProcessuais.Size = new System.Drawing.Size(913, 250);
+            this.dgvProcessosTramitesProcessuais.Size = new System.Drawing.Size(910, 246);
             this.dgvProcessosTramitesProcessuais.TabIndex = 3;
             this.dgvProcessosTramitesProcessuais.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcessosTramitesProcessuais_CellDoubleClick);
             // 
@@ -224,14 +227,16 @@ namespace Fiscalizacao
             // 
             // tabControl1
             // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 404);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(924, 288);
+            this.tabControl1.Size = new System.Drawing.Size(924, 281);
             this.tabControl1.TabIndex = 21;
             // 
             // tabPage1
@@ -240,7 +245,7 @@ namespace Fiscalizacao
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(916, 259);
+            this.tabPage1.Size = new System.Drawing.Size(916, 252);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Infrações";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -251,7 +256,7 @@ namespace Fiscalizacao
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(916, 259);
+            this.tabPage2.Size = new System.Drawing.Size(916, 252);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Notificações";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -262,19 +267,22 @@ namespace Fiscalizacao
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(916, 259);
+            this.tabPage3.Size = new System.Drawing.Size(916, 252);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Trâmites";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabProcesso
             // 
+            this.tabProcesso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabProcesso.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabProcesso.Controls.Add(this.tabPage4);
             this.tabProcesso.Controls.Add(this.tabPage5);
             this.tabProcesso.Location = new System.Drawing.Point(12, 12);
             this.tabProcesso.Name = "tabProcesso";
             this.tabProcesso.SelectedIndex = 0;
-            this.tabProcesso.Size = new System.Drawing.Size(924, 368);
+            this.tabProcesso.Size = new System.Drawing.Size(924, 360);
             this.tabProcesso.TabIndex = 22;
             this.tabProcesso.Tag = "";
             // 
@@ -294,16 +302,18 @@ namespace Fiscalizacao
             this.tabPage4.Controls.Add(this.lblUltimoTramite);
             this.tabPage4.Controls.Add(this.lblTipoPedido);
             this.tabPage4.Controls.Add(this.lblProtocolo);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(916, 342);
+            this.tabPage4.Size = new System.Drawing.Size(916, 331);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Processos";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // MembroDesignado
             // 
+            this.MembroDesignado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MembroDesignado.Location = new System.Drawing.Point(134, 170);
             this.MembroDesignado.Name = "MembroDesignado";
             this.MembroDesignado.Size = new System.Drawing.Size(723, 20);
@@ -311,6 +321,8 @@ namespace Fiscalizacao
             // 
             // TipoDesignacao
             // 
+            this.TipoDesignacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TipoDesignacao.Location = new System.Drawing.Point(134, 144);
             this.TipoDesignacao.Name = "TipoDesignacao";
             this.TipoDesignacao.Size = new System.Drawing.Size(723, 20);
@@ -336,6 +348,8 @@ namespace Fiscalizacao
             // 
             // Representante
             // 
+            this.Representante.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Representante.Location = new System.Drawing.Point(134, 118);
             this.Representante.Name = "Representante";
             this.Representante.Size = new System.Drawing.Size(723, 20);
@@ -343,6 +357,8 @@ namespace Fiscalizacao
             // 
             // Representado
             // 
+            this.Representado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Representado.Location = new System.Drawing.Point(134, 92);
             this.Representado.Name = "Representado";
             this.Representado.Size = new System.Drawing.Size(723, 20);
@@ -350,6 +366,8 @@ namespace Fiscalizacao
             // 
             // TramiteAtual
             // 
+            this.TramiteAtual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TramiteAtual.Location = new System.Drawing.Point(134, 66);
             this.TramiteAtual.Name = "TramiteAtual";
             this.TramiteAtual.Size = new System.Drawing.Size(723, 20);
@@ -357,6 +375,8 @@ namespace Fiscalizacao
             // 
             // TipoProcesso
             // 
+            this.TipoProcesso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TipoProcesso.Location = new System.Drawing.Point(134, 40);
             this.TipoProcesso.Name = "TipoProcesso";
             this.TipoProcesso.Size = new System.Drawing.Size(723, 20);
@@ -364,6 +384,8 @@ namespace Fiscalizacao
             // 
             // ProtocoloDocumento
             // 
+            this.ProtocoloDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ProtocoloDocumento.Location = new System.Drawing.Point(134, 13);
             this.ProtocoloDocumento.Name = "ProtocoloDocumento";
             this.ProtocoloDocumento.Size = new System.Drawing.Size(723, 20);
@@ -450,16 +472,19 @@ namespace Fiscalizacao
             this.tabPage5.Controls.Add(this.NumeroProcessoAntigo);
             this.tabPage5.Controls.Add(this.ProcessoJuridico);
             this.tabPage5.Controls.Add(this.lblNumeroDoProcessoJuridico);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(916, 342);
+            this.tabPage5.Size = new System.Drawing.Size(916, 339);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Divida Ativa";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // lblValorAtualizado
             // 
+            this.lblValorAtualizado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorAtualizado.AutoSize = true;
             this.lblValorAtualizado.Location = new System.Drawing.Point(339, 261);
             this.lblValorAtualizado.Name = "lblValorAtualizado";
@@ -469,6 +494,9 @@ namespace Fiscalizacao
             // 
             // ValorTitulosAtualizado
             // 
+            this.ValorTitulosAtualizado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ValorTitulosAtualizado.Location = new System.Drawing.Point(342, 277);
             this.ValorTitulosAtualizado.Name = "ValorTitulosAtualizado";
             this.ValorTitulosAtualizado.Size = new System.Drawing.Size(338, 20);
@@ -501,6 +529,7 @@ namespace Fiscalizacao
             // 
             // lblVara
             // 
+            this.lblVara.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVara.AutoSize = true;
             this.lblVara.Location = new System.Drawing.Point(525, 171);
             this.lblVara.Name = "lblVara";
@@ -510,6 +539,7 @@ namespace Fiscalizacao
             // 
             // Vara
             // 
+            this.Vara.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Vara.Location = new System.Drawing.Point(528, 187);
             this.Vara.Name = "Vara";
             this.Vara.Size = new System.Drawing.Size(355, 20);
@@ -517,6 +547,7 @@ namespace Fiscalizacao
             // 
             // lblFolha
             // 
+            this.lblFolha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblFolha.AutoSize = true;
             this.lblFolha.Location = new System.Drawing.Point(354, 128);
             this.lblFolha.Name = "lblFolha";
@@ -526,6 +557,7 @@ namespace Fiscalizacao
             // 
             // Folha
             // 
+            this.Folha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Folha.Location = new System.Drawing.Point(357, 144);
             this.Folha.Name = "Folha";
             this.Folha.Size = new System.Drawing.Size(323, 20);
@@ -565,6 +597,7 @@ namespace Fiscalizacao
             // 
             // lblLocal
             // 
+            this.lblLocal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLocal.AutoSize = true;
             this.lblLocal.Location = new System.Drawing.Point(705, 128);
             this.lblLocal.Name = "lblLocal";
@@ -574,6 +607,7 @@ namespace Fiscalizacao
             // 
             // Local
             // 
+            this.Local.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Local.Location = new System.Drawing.Point(708, 144);
             this.Local.Name = "Local";
             this.Local.Size = new System.Drawing.Size(175, 20);
@@ -597,6 +631,7 @@ namespace Fiscalizacao
             // 
             // lblJuizo
             // 
+            this.lblJuizo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblJuizo.AutoSize = true;
             this.lblJuizo.Location = new System.Drawing.Point(717, 11);
             this.lblJuizo.Name = "lblJuizo";
@@ -606,6 +641,7 @@ namespace Fiscalizacao
             // 
             // Juizo
             // 
+            this.Juizo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Juizo.Location = new System.Drawing.Point(720, 27);
             this.Juizo.Name = "Juizo";
             this.Juizo.Size = new System.Drawing.Size(163, 20);
@@ -613,6 +649,7 @@ namespace Fiscalizacao
             // 
             // lblExercicio
             // 
+            this.lblExercicio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblExercicio.AutoSize = true;
             this.lblExercicio.Location = new System.Drawing.Point(475, 50);
             this.lblExercicio.Name = "lblExercicio";
@@ -622,6 +659,7 @@ namespace Fiscalizacao
             // 
             // Exercicio
             // 
+            this.Exercicio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Exercicio.Location = new System.Drawing.Point(478, 66);
             this.Exercicio.Name = "Exercicio";
             this.Exercicio.Size = new System.Drawing.Size(202, 20);
@@ -629,6 +667,7 @@ namespace Fiscalizacao
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(717, 50);
             this.label7.Name = "label7";
@@ -638,6 +677,7 @@ namespace Fiscalizacao
             // 
             // ValorCustasProcessuais
             // 
+            this.ValorCustasProcessuais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ValorCustasProcessuais.Location = new System.Drawing.Point(528, 231);
             this.ValorCustasProcessuais.Name = "ValorCustasProcessuais";
             this.ValorCustasProcessuais.Size = new System.Drawing.Size(355, 20);
@@ -645,6 +685,7 @@ namespace Fiscalizacao
             // 
             // lblDivida
             // 
+            this.lblDivida.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDivida.AutoSize = true;
             this.lblDivida.Location = new System.Drawing.Point(250, 50);
             this.lblDivida.Name = "lblDivida";
@@ -654,6 +695,7 @@ namespace Fiscalizacao
             // 
             // ProcessoJuridicoExterno
             // 
+            this.ProcessoJuridicoExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ProcessoJuridicoExterno.Location = new System.Drawing.Point(720, 66);
             this.ProcessoJuridicoExterno.Name = "ProcessoJuridicoExterno";
             this.ProcessoJuridicoExterno.Size = new System.Drawing.Size(163, 20);
@@ -661,6 +703,7 @@ namespace Fiscalizacao
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(525, 215);
             this.label3.Name = "label3";
@@ -677,6 +720,7 @@ namespace Fiscalizacao
             // 
             // RenegociacaoSimulacao
             // 
+            this.RenegociacaoSimulacao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RenegociacaoSimulacao.Location = new System.Drawing.Point(253, 66);
             this.RenegociacaoSimulacao.Name = "RenegociacaoSimulacao";
             this.RenegociacaoSimulacao.Size = new System.Drawing.Size(195, 20);
@@ -700,6 +744,7 @@ namespace Fiscalizacao
             // 
             // lblProcessoAntigo
             // 
+            this.lblProcessoAntigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblProcessoAntigo.AutoSize = true;
             this.lblProcessoAntigo.Location = new System.Drawing.Point(373, 11);
             this.lblProcessoAntigo.Name = "lblProcessoAntigo";
@@ -709,6 +754,7 @@ namespace Fiscalizacao
             // 
             // NumeroProcessoAntigo
             // 
+            this.NumeroProcessoAntigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.NumeroProcessoAntigo.Location = new System.Drawing.Point(376, 27);
             this.NumeroProcessoAntigo.Name = "NumeroProcessoAntigo";
             this.NumeroProcessoAntigo.Size = new System.Drawing.Size(326, 20);

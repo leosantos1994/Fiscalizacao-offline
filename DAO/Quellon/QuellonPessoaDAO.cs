@@ -22,14 +22,13 @@ namespace Fiscalizacao.Quellon
         {
             using (IXMLMaker xml = config.Consulta("PessoaXml"))
             {
-                xml.MaxPages = 500;
+                xml.MaxPages = 100;
                 xml.addColumnDesc("ID");
 
                 if (!string.IsNullOrEmpty(pessoas))
                     xml.addFilterColumnSelect("ID", XMLMaker.EstaEm, pessoas);
 
                 ColunasSimplesPessoa(xml);
-                //xml.addMultiColumnsSelect(ColunasSimplesPessoa());
                 AdicionarCamposJoinPessoa(xml);
                 return xml.XmlModelReaderBySelectColumns<PessoaModel>();
             }
@@ -80,6 +79,7 @@ namespace Fiscalizacao.Quellon
             xml.addColumnSelect("SituacaoAtual.Descricao", "StuacaoAtual");
             xml.addColumnSelect("ComplementoSituacao.Descricao", "ComplementoSituacao");
             xml.addColumnSelect("MotivoSituacaoAtual.Descricao", "MotivoSituacao");
+            xml.addColumnSelect("SubUnidadeAtual.NomeSubUnidade", "SubUnidadeAtual");
         }
         #endregion
     }

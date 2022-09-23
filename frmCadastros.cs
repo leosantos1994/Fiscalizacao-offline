@@ -20,6 +20,9 @@ namespace Fiscalizacao
         {
             this.CarregarTela(model);
             GridInscricoes();
+            GridContatos();
+            GridFormacao();
+            GridFinanceiro();
         }
 
         private void GridInscricoes()
@@ -31,9 +34,36 @@ namespace Fiscalizacao
             }
         }
 
+        private void GridContatos()
+        {
+            dgvOutrosContatos.Rows.Clear();
+            foreach (var item in model.OutrosContatos)
+            {
+                dgvOutrosContatos.Rows.Add(item.Contato, item.TipoContato, item.Complemento, item.Ramal);
+            }
+        }
+
+        private void GridFormacao()
+        {
+            dgvFormacao.Rows.Clear();
+            foreach (var item in model.Formacao)
+            {
+                dgvFormacao.Rows.Add(item.Formacao, item.Especialidade);
+            }
+        }
+        private void GridFinanceiro()
+        {
+            dgvFinanceiro.Rows.Clear();
+            foreach (var item in model.Financeiro)
+            {
+                dgvFinanceiro.Rows.Add(item.Id, item.Situacao, item.Ano, item.TipoLancamento, item.ValorLiquido, item.ValorBruto);
+            }
+        }
+
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         #region EventoClick
@@ -44,10 +74,6 @@ namespace Fiscalizacao
         private void dgvProcessos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             new frmProcessos().ShowDialog();
-        }
-        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            new frmFinanceiro().ShowDialog();
         }
         private void dgvFormacao_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -66,5 +92,11 @@ namespace Fiscalizacao
             new frmRTeART().ShowDialog();
         }
         #endregion
+
+        private void dgvFinanceiro_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id = (sender as DataGridView).Rows[e.RowIndex].Cells[0].Value.ToString();
+            new frmFinanceiro(int.Parse(id)).ShowDialog();
+        }
     }
 }

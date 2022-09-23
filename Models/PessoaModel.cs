@@ -27,12 +27,14 @@ namespace Fiscalizacao.Models
         public DateTime DataUltimaVisita { get; set; }
         public string Nome { get; set; }
         public string CPFCNPJ { get; set; }
+        public string SubUnidadeAtual { get; set; }
         public string NumeroProcesso { get; set; }
         public string NumeroProcessoAntigo { get; set; }
         public string NomeAbreviado { get; set; }
         public string NomeSocial { get; set; }
         public string RegistroConselho { get; set; }
         public string LogradouroResidencial { get; set; }
+        public string LogradouroComercial { get; set; }
         public string ComplementoResidencial { get; set; }
         public string NumeroResidencial { get; set; }
         public string BairroResidencial { get; set; }
@@ -43,7 +45,7 @@ namespace Fiscalizacao.Models
         public string EmailResidencial { get; set; }
         public string ComplementoComercial { get; set; }
         public string NumeroComercial { get; set; }
-        public string BairroComecial { get; set; }
+        public string BairroComercial { get; set; }
         public string TelefoneComercial { get; set; }
         public string TelefoneCEmailComercialomercial { get; set; }
         public string CEPResidencial { get; set; }

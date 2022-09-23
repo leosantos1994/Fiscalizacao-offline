@@ -18,37 +18,49 @@ namespace Fiscalizacao
         }
         private void TelaLogin_Load(object sender, EventArgs e)
         {
-
+            CarregarCredenciais();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+            Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text.ToLower() == "adm" && txtSenha.Text == "adm")
+            //if (txtUsuario.Text.ToLower() == "adm" && txtSenha.Text == "adm")
             {
-              var form  = new frmMenu();
+                SalvarCredenciais();
+                var form = new frmMenu();
                 form.Show();
                 form.FormClosed += MostrarLogin;
 
                 this.Hide();
             }
-            else
-            {
-                MessageBox.Show("Usuário ou Senha Incorretos");
-            }
+            //else
+            //{
+            //    MessageBox.Show("Usuário ou Senha Incorretos");
+            //}
 
         }
         private void MostrarLogin(object sender, FormClosedEventArgs e)
         {
-            txtUsuario.Text = "";
-            txtSenha.Text = "";
             this.Show();
-
         }
 
+        private void SalvarCredenciais()
+        {
+            Properties.Settings.Default.URL = textBox3.Text;
+            Properties.Settings.Default.Usuario = txtUsuario.Text;
+            Properties.Settings.Default.Senha = txtSenha.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void CarregarCredenciais()
+        {
+            textBox3.Text = Properties.Settings.Default.URL;
+            txtUsuario.Text = Properties.Settings.Default.Usuario;
+            txtSenha.Text = Properties.Settings.Default.Senha;
+        }
     }
 }

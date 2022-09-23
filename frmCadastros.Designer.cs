@@ -35,10 +35,6 @@ namespace Fiscalizacao
             this.lblNomeFantasia = new System.Windows.Forms.Label();
             this.lblLogo = new System.Windows.Forms.Label();
             this.Foto = new System.Windows.Forms.PictureBox();
-            this.lblART = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.lblRT = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.lblNascimentoFundacao = new System.Windows.Forms.Label();
             this.DataNascimentoFundacao = new System.Windows.Forms.TextBox();
             this.lblNomeSocial = new System.Windows.Forms.Label();
@@ -52,8 +48,8 @@ namespace Fiscalizacao
             this.lblUltimaVisita = new System.Windows.Forms.Label();
             this.DataUltimaVisita = new System.Windows.Forms.TextBox();
             this.lblAdimplente = new System.Windows.Forms.Label();
-            this.Adimplente = new System.Windows.Forms.TextBox();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.Inadimplente = new System.Windows.Forms.TextBox();
+            this.ComplementoSituacao = new System.Windows.Forms.TextBox();
             this.NumeroProcessoAntigo = new System.Windows.Forms.TextBox();
             this.SituacaoAtual = new System.Windows.Forms.TextBox();
             this.txtValidadeDaInscricao = new System.Windows.Forms.TextBox();
@@ -110,6 +106,10 @@ namespace Fiscalizacao
             this.lblMunicipioResidencial = new System.Windows.Forms.Label();
             this.tabInscricao = new System.Windows.Forms.TabPage();
             this.dgvInscricoes = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabContatos = new System.Windows.Forms.TabPage();
             this.dgvOutrosContatos = new System.Windows.Forms.DataGridView();
             this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,13 +125,12 @@ namespace Fiscalizacao
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvFormacao = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dgvOcorrencias = new System.Windows.Forms.DataGridView();
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dgvFinanceiro = new System.Windows.Forms.DataGridView();
-            this.crAno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvProcessos = new System.Windows.Forms.DataGridView();
             this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,10 +138,12 @@ namespace Fiscalizacao
             this.dgvProtocolos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.crAno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoLancamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorLiquido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProcessos.SuspendLayout();
             this.tabART.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Foto)).BeginInit();
@@ -193,10 +194,6 @@ namespace Fiscalizacao
             this.tabART.Controls.Add(this.lblNomeFantasia);
             this.tabART.Controls.Add(this.lblLogo);
             this.tabART.Controls.Add(this.Foto);
-            this.tabART.Controls.Add(this.lblART);
-            this.tabART.Controls.Add(this.textBox8);
-            this.tabART.Controls.Add(this.lblRT);
-            this.tabART.Controls.Add(this.textBox7);
             this.tabART.Controls.Add(this.lblNascimentoFundacao);
             this.tabART.Controls.Add(this.DataNascimentoFundacao);
             this.tabART.Controls.Add(this.lblNomeSocial);
@@ -210,8 +207,8 @@ namespace Fiscalizacao
             this.tabART.Controls.Add(this.lblUltimaVisita);
             this.tabART.Controls.Add(this.DataUltimaVisita);
             this.tabART.Controls.Add(this.lblAdimplente);
-            this.tabART.Controls.Add(this.Adimplente);
-            this.tabART.Controls.Add(this.txtComplemento);
+            this.tabART.Controls.Add(this.Inadimplente);
+            this.tabART.Controls.Add(this.ComplementoSituacao);
             this.tabART.Controls.Add(this.NumeroProcessoAntigo);
             this.tabART.Controls.Add(this.SituacaoAtual);
             this.tabART.Controls.Add(this.txtValidadeDaInscricao);
@@ -242,7 +239,7 @@ namespace Fiscalizacao
             this.NomeAbreviado.BackColor = System.Drawing.SystemColors.Window;
             this.NomeAbreviado.Location = new System.Drawing.Point(9, 104);
             this.NomeAbreviado.Name = "NomeAbreviado";
-            this.NomeAbreviado.Size = new System.Drawing.Size(651, 20);
+            this.NomeAbreviado.Size = new System.Drawing.Size(597, 20);
             this.NomeAbreviado.TabIndex = 135;
             // 
             // lblNomeFantasia
@@ -277,46 +274,11 @@ namespace Fiscalizacao
             this.Foto.TabIndex = 132;
             this.Foto.TabStop = false;
             // 
-            // lblART
-            // 
-            this.lblART.AutoSize = true;
-            this.lblART.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lblART.Location = new System.Drawing.Point(178, 167);
-            this.lblART.Name = "lblART";
-            this.lblART.Size = new System.Drawing.Size(29, 13);
-            this.lblART.TabIndex = 131;
-            this.lblART.Text = "ART";
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox8.Location = new System.Drawing.Point(181, 180);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(151, 20);
-            this.textBox8.TabIndex = 130;
-            // 
-            // lblRT
-            // 
-            this.lblRT.AutoSize = true;
-            this.lblRT.Location = new System.Drawing.Point(7, 167);
-            this.lblRT.Name = "lblRT";
-            this.lblRT.Size = new System.Drawing.Size(22, 13);
-            this.lblRT.TabIndex = 129;
-            this.lblRT.Text = "RT";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox7.Location = new System.Drawing.Point(9, 180);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(150, 20);
-            this.textBox7.TabIndex = 128;
-            // 
             // lblNascimentoFundacao
             // 
             this.lblNascimentoFundacao.AutoSize = true;
             this.lblNascimentoFundacao.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lblNascimentoFundacao.Location = new System.Drawing.Point(7, 206);
+            this.lblNascimentoFundacao.Location = new System.Drawing.Point(6, 164);
             this.lblNascimentoFundacao.Name = "lblNascimentoFundacao";
             this.lblNascimentoFundacao.Size = new System.Drawing.Size(122, 13);
             this.lblNascimentoFundacao.TabIndex = 127;
@@ -325,9 +287,9 @@ namespace Fiscalizacao
             // DataNascimentoFundacao
             // 
             this.DataNascimentoFundacao.BackColor = System.Drawing.SystemColors.Window;
-            this.DataNascimentoFundacao.Location = new System.Drawing.Point(10, 222);
+            this.DataNascimentoFundacao.Location = new System.Drawing.Point(9, 180);
             this.DataNascimentoFundacao.Name = "DataNascimentoFundacao";
-            this.DataNascimentoFundacao.Size = new System.Drawing.Size(284, 20);
+            this.DataNascimentoFundacao.Size = new System.Drawing.Size(597, 20);
             this.DataNascimentoFundacao.TabIndex = 126;
             // 
             // lblNomeSocial
@@ -344,14 +306,14 @@ namespace Fiscalizacao
             this.NomeSocial.BackColor = System.Drawing.SystemColors.Window;
             this.NomeSocial.Location = new System.Drawing.Point(9, 59);
             this.NomeSocial.Name = "NomeSocial";
-            this.NomeSocial.Size = new System.Drawing.Size(651, 20);
+            this.NomeSocial.Size = new System.Drawing.Size(597, 20);
             this.NomeSocial.TabIndex = 124;
             // 
             // lblCpfCnpj
             // 
             this.lblCpfCnpj.AutoSize = true;
             this.lblCpfCnpj.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lblCpfCnpj.Location = new System.Drawing.Point(352, 206);
+            this.lblCpfCnpj.Location = new System.Drawing.Point(265, 205);
             this.lblCpfCnpj.Name = "lblCpfCnpj";
             this.lblCpfCnpj.Size = new System.Drawing.Size(65, 13);
             this.lblCpfCnpj.TabIndex = 123;
@@ -360,9 +322,9 @@ namespace Fiscalizacao
             // CPFCNPJ
             // 
             this.CPFCNPJ.BackColor = System.Drawing.SystemColors.Window;
-            this.CPFCNPJ.Location = new System.Drawing.Point(355, 222);
+            this.CPFCNPJ.Location = new System.Drawing.Point(268, 221);
             this.CPFCNPJ.Name = "CPFCNPJ";
-            this.CPFCNPJ.Size = new System.Drawing.Size(305, 20);
+            this.CPFCNPJ.Size = new System.Drawing.Size(338, 20);
             this.CPFCNPJ.TabIndex = 122;
             // 
             // lblTipoPessoa
@@ -379,14 +341,14 @@ namespace Fiscalizacao
             this.TipoPessoa.BackColor = System.Drawing.SystemColors.Window;
             this.TipoPessoa.Location = new System.Drawing.Point(9, 143);
             this.TipoPessoa.Name = "TipoPessoa";
-            this.TipoPessoa.Size = new System.Drawing.Size(651, 20);
+            this.TipoPessoa.Size = new System.Drawing.Size(597, 20);
             this.TipoPessoa.TabIndex = 120;
             // 
             // lblRG
             // 
             this.lblRG.AutoSize = true;
             this.lblRG.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lblRG.Location = new System.Drawing.Point(352, 167);
+            this.lblRG.Location = new System.Drawing.Point(6, 208);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(23, 13);
             this.lblRG.TabIndex = 119;
@@ -395,18 +357,16 @@ namespace Fiscalizacao
             // RG
             // 
             this.RG.BackColor = System.Drawing.SystemColors.Window;
-            this.RG.Location = new System.Drawing.Point(355, 180);
+            this.RG.Location = new System.Drawing.Point(9, 221);
             this.RG.Name = "RG";
-            this.RG.Size = new System.Drawing.Size(214, 20);
+            this.RG.Size = new System.Drawing.Size(253, 20);
             this.RG.TabIndex = 118;
             // 
             // lblUltimaVisita
             // 
-            this.lblUltimaVisita.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUltimaVisita.AutoSize = true;
             this.lblUltimaVisita.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lblUltimaVisita.Location = new System.Drawing.Point(772, 244);
+            this.lblUltimaVisita.Location = new System.Drawing.Point(618, 43);
             this.lblUltimaVisita.Name = "lblUltimaVisita";
             this.lblUltimaVisita.Size = new System.Drawing.Size(63, 13);
             this.lblUltimaVisita.TabIndex = 117;
@@ -414,12 +374,10 @@ namespace Fiscalizacao
             // 
             // DataUltimaVisita
             // 
-            this.DataUltimaVisita.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DataUltimaVisita.BackColor = System.Drawing.SystemColors.Window;
-            this.DataUltimaVisita.Location = new System.Drawing.Point(769, 260);
+            this.DataUltimaVisita.Location = new System.Drawing.Point(621, 59);
             this.DataUltimaVisita.Name = "DataUltimaVisita";
-            this.DataUltimaVisita.Size = new System.Drawing.Size(152, 20);
+            this.DataUltimaVisita.Size = new System.Drawing.Size(67, 20);
             this.DataUltimaVisita.TabIndex = 116;
             // 
             // lblAdimplente
@@ -433,49 +391,48 @@ namespace Fiscalizacao
             this.lblAdimplente.TabIndex = 115;
             this.lblAdimplente.Text = "Adimplente";
             // 
-            // Adimplente
+            // Inadimplente
             // 
-            this.Adimplente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Adimplente.BackColor = System.Drawing.SystemColors.Window;
-            this.Adimplente.Location = new System.Drawing.Point(722, 336);
-            this.Adimplente.Name = "Adimplente";
-            this.Adimplente.Size = new System.Drawing.Size(224, 20);
-            this.Adimplente.TabIndex = 114;
+            this.Inadimplente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Inadimplente.BackColor = System.Drawing.SystemColors.Window;
+            this.Inadimplente.Location = new System.Drawing.Point(722, 336);
+            this.Inadimplente.Name = "Inadimplente";
+            this.Inadimplente.Size = new System.Drawing.Size(223, 20);
+            this.Inadimplente.TabIndex = 114;
             // 
-            // txtComplemento
+            // ComplementoSituacao
             // 
-            this.txtComplemento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ComplementoSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComplemento.BackColor = System.Drawing.SystemColors.Window;
-            this.txtComplemento.Location = new System.Drawing.Point(9, 297);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(937, 20);
-            this.txtComplemento.TabIndex = 113;
+            this.ComplementoSituacao.BackColor = System.Drawing.SystemColors.Window;
+            this.ComplementoSituacao.Location = new System.Drawing.Point(374, 299);
+            this.ComplementoSituacao.Name = "ComplementoSituacao";
+            this.ComplementoSituacao.Size = new System.Drawing.Size(571, 20);
+            this.ComplementoSituacao.TabIndex = 113;
             // 
             // NumeroProcessoAntigo
             // 
             this.NumeroProcessoAntigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NumeroProcessoAntigo.BackColor = System.Drawing.SystemColors.Window;
-            this.NumeroProcessoAntigo.Location = new System.Drawing.Point(367, 260);
+            this.NumeroProcessoAntigo.Location = new System.Drawing.Point(374, 260);
             this.NumeroProcessoAntigo.Name = "NumeroProcessoAntigo";
-            this.NumeroProcessoAntigo.Size = new System.Drawing.Size(293, 20);
+            this.NumeroProcessoAntigo.Size = new System.Drawing.Size(232, 20);
             this.NumeroProcessoAntigo.TabIndex = 112;
             // 
             // SituacaoAtual
             // 
-            this.SituacaoAtual.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SituacaoAtual.BackColor = System.Drawing.SystemColors.Window;
-            this.SituacaoAtual.Location = new System.Drawing.Point(485, 336);
+            this.SituacaoAtual.Location = new System.Drawing.Point(9, 299);
             this.SituacaoAtual.Name = "SituacaoAtual";
-            this.SituacaoAtual.Size = new System.Drawing.Size(231, 20);
+            this.SituacaoAtual.Size = new System.Drawing.Size(352, 20);
             this.SituacaoAtual.TabIndex = 111;
             // 
             // txtValidadeDaInscricao
             // 
             this.txtValidadeDaInscricao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtValidadeDaInscricao.BackColor = System.Drawing.SystemColors.Window;
-            this.txtValidadeDaInscricao.Location = new System.Drawing.Point(247, 336);
+            this.txtValidadeDaInscricao.Location = new System.Drawing.Point(374, 336);
             this.txtValidadeDaInscricao.Name = "txtValidadeDaInscricao";
             this.txtValidadeDaInscricao.Size = new System.Drawing.Size(232, 20);
             this.txtValidadeDaInscricao.TabIndex = 110;
@@ -501,7 +458,7 @@ namespace Fiscalizacao
             this.RegistroConselho.BackColor = System.Drawing.SystemColors.Window;
             this.RegistroConselho.Location = new System.Drawing.Point(9, 336);
             this.RegistroConselho.Name = "RegistroConselho";
-            this.RegistroConselho.Size = new System.Drawing.Size(230, 20);
+            this.RegistroConselho.Size = new System.Drawing.Size(352, 20);
             this.RegistroConselho.TabIndex = 107;
             // 
             // Nome
@@ -519,7 +476,7 @@ namespace Fiscalizacao
             this.lblSituacaoAtual.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSituacaoAtual.AutoSize = true;
             this.lblSituacaoAtual.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lblSituacaoAtual.Location = new System.Drawing.Point(482, 320);
+            this.lblSituacaoAtual.Location = new System.Drawing.Point(6, 283);
             this.lblSituacaoAtual.Name = "lblSituacaoAtual";
             this.lblSituacaoAtual.Size = new System.Drawing.Size(76, 13);
             this.lblSituacaoAtual.TabIndex = 105;
@@ -531,7 +488,7 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProcessoAntigo.AutoSize = true;
             this.lblProcessoAntigo.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lblProcessoAntigo.Location = new System.Drawing.Point(365, 244);
+            this.lblProcessoAntigo.Location = new System.Drawing.Point(371, 244);
             this.lblProcessoAntigo.Name = "lblProcessoAntigo";
             this.lblProcessoAntigo.Size = new System.Drawing.Size(84, 13);
             this.lblProcessoAntigo.TabIndex = 104;
@@ -540,7 +497,7 @@ namespace Fiscalizacao
             // lblComplementoCad
             // 
             this.lblComplementoCad.AutoSize = true;
-            this.lblComplementoCad.Location = new System.Drawing.Point(8, 281);
+            this.lblComplementoCad.Location = new System.Drawing.Point(371, 283);
             this.lblComplementoCad.Name = "lblComplementoCad";
             this.lblComplementoCad.Size = new System.Drawing.Size(71, 13);
             this.lblComplementoCad.TabIndex = 103;
@@ -551,7 +508,7 @@ namespace Fiscalizacao
             this.lblValidadeDaInscricao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblValidadeDaInscricao.AutoSize = true;
             this.lblValidadeDaInscricao.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.lblValidadeDaInscricao.Location = new System.Drawing.Point(245, 320);
+            this.lblValidadeDaInscricao.Location = new System.Drawing.Point(372, 322);
             this.lblValidadeDaInscricao.Name = "lblValidadeDaInscricao";
             this.lblValidadeDaInscricao.Size = new System.Drawing.Size(109, 13);
             this.lblValidadeDaInscricao.TabIndex = 102;
@@ -608,11 +565,11 @@ namespace Fiscalizacao
             this.tabEnderecoComercial.Controls.Add(this.tabPage8);
             this.tabEnderecoComercial.Controls.Add(this.tabPage4);
             this.tabEnderecoComercial.Controls.Add(this.tabPage5);
-            this.tabEnderecoComercial.Location = new System.Drawing.Point(9, 362);
+            this.tabEnderecoComercial.Location = new System.Drawing.Point(3, 362);
             this.tabEnderecoComercial.Multiline = true;
             this.tabEnderecoComercial.Name = "tabEnderecoComercial";
             this.tabEnderecoComercial.SelectedIndex = 0;
-            this.tabEnderecoComercial.Size = new System.Drawing.Size(947, 255);
+            this.tabEnderecoComercial.Size = new System.Drawing.Size(954, 281);
             this.tabEnderecoComercial.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabEnderecoComercial.TabIndex = 97;
             // 
@@ -640,7 +597,7 @@ namespace Fiscalizacao
             this.tbpEnderecoComercial.Location = new System.Drawing.Point(4, 25);
             this.tbpEnderecoComercial.Name = "tbpEnderecoComercial";
             this.tbpEnderecoComercial.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpEnderecoComercial.Size = new System.Drawing.Size(939, 226);
+            this.tbpEnderecoComercial.Size = new System.Drawing.Size(946, 252);
             this.tbpEnderecoComercial.TabIndex = 0;
             this.tbpEnderecoComercial.Text = "Endereço Comercial";
             this.tbpEnderecoComercial.UseVisualStyleBackColor = true;
@@ -648,16 +605,16 @@ namespace Fiscalizacao
             // NumeroComercial
             // 
             this.NumeroComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumeroComercial.Location = new System.Drawing.Point(6, 65);
+            this.NumeroComercial.Location = new System.Drawing.Point(2, 63);
             this.NumeroComercial.Name = "NumeroComercial";
-            this.NumeroComercial.Size = new System.Drawing.Size(126, 20);
+            this.NumeroComercial.Size = new System.Drawing.Size(130, 20);
             this.NumeroComercial.TabIndex = 122;
             // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.Location = new System.Drawing.Point(6, 49);
+            this.lblNumero.Location = new System.Drawing.Point(3, 46);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 121;
@@ -668,15 +625,15 @@ namespace Fiscalizacao
             this.EmailComercial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailComercial.Location = new System.Drawing.Point(334, 186);
+            this.EmailComercial.Location = new System.Drawing.Point(334, 212);
             this.EmailComercial.Name = "EmailComercial";
-            this.EmailComercial.Size = new System.Drawing.Size(598, 20);
+            this.EmailComercial.Size = new System.Drawing.Size(605, 20);
             this.EmailComercial.TabIndex = 119;
             // 
             // TelefoneComercial
             // 
             this.TelefoneComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefoneComercial.Location = new System.Drawing.Point(6, 189);
+            this.TelefoneComercial.Location = new System.Drawing.Point(6, 212);
             this.TelefoneComercial.Name = "TelefoneComercial";
             this.TelefoneComercial.Size = new System.Drawing.Size(322, 20);
             this.TelefoneComercial.TabIndex = 120;
@@ -686,25 +643,25 @@ namespace Fiscalizacao
             this.LogradouroComercial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LogradouroComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogradouroComercial.Location = new System.Drawing.Point(6, 21);
+            this.LogradouroComercial.Location = new System.Drawing.Point(2, 23);
             this.LogradouroComercial.Name = "LogradouroComercial";
-            this.LogradouroComercial.Size = new System.Drawing.Size(926, 20);
+            this.LogradouroComercial.Size = new System.Drawing.Size(937, 20);
             this.LogradouroComercial.TabIndex = 105;
             // 
             // MunicipioComercial
             // 
             this.MunicipioComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MunicipioComercial.Location = new System.Drawing.Point(6, 105);
+            this.MunicipioComercial.Location = new System.Drawing.Point(3, 100);
             this.MunicipioComercial.Name = "MunicipioComercial";
-            this.MunicipioComercial.Size = new System.Drawing.Size(638, 20);
+            this.MunicipioComercial.Size = new System.Drawing.Size(641, 20);
             this.MunicipioComercial.TabIndex = 118;
             // 
             // BairroComercial
             // 
             this.BairroComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BairroComercial.Location = new System.Drawing.Point(6, 150);
+            this.BairroComercial.Location = new System.Drawing.Point(3, 139);
             this.BairroComercial.Name = "BairroComercial";
-            this.BairroComercial.Size = new System.Drawing.Size(539, 20);
+            this.BairroComercial.Size = new System.Drawing.Size(541, 20);
             this.BairroComercial.TabIndex = 106;
             // 
             // EstadoComercial
@@ -712,9 +669,9 @@ namespace Fiscalizacao
             this.EstadoComercial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EstadoComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EstadoComercial.Location = new System.Drawing.Point(652, 102);
+            this.EstadoComercial.Location = new System.Drawing.Point(651, 100);
             this.EstadoComercial.Name = "EstadoComercial";
-            this.EstadoComercial.Size = new System.Drawing.Size(280, 20);
+            this.EstadoComercial.Size = new System.Drawing.Size(289, 20);
             this.EstadoComercial.TabIndex = 117;
             // 
             // CEPComercial
@@ -722,9 +679,9 @@ namespace Fiscalizacao
             this.CEPComercial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CEPComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CEPComercial.Location = new System.Drawing.Point(551, 147);
+            this.CEPComercial.Location = new System.Drawing.Point(550, 139);
             this.CEPComercial.Name = "CEPComercial";
-            this.CEPComercial.Size = new System.Drawing.Size(381, 20);
+            this.CEPComercial.Size = new System.Drawing.Size(389, 20);
             this.CEPComercial.TabIndex = 116;
             // 
             // ComplementoComercial
@@ -732,16 +689,16 @@ namespace Fiscalizacao
             this.ComplementoComercial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ComplementoComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComplementoComercial.Location = new System.Drawing.Point(138, 62);
+            this.ComplementoComercial.Location = new System.Drawing.Point(138, 63);
             this.ComplementoComercial.Name = "ComplementoComercial";
-            this.ComplementoComercial.Size = new System.Drawing.Size(794, 20);
+            this.ComplementoComercial.Size = new System.Drawing.Size(801, 20);
             this.ComplementoComercial.TabIndex = 115;
             // 
             // lblMunicipioComercial
             // 
             this.lblMunicipioComercial.AutoSize = true;
             this.lblMunicipioComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMunicipioComercial.Location = new System.Drawing.Point(3, 88);
+            this.lblMunicipioComercial.Location = new System.Drawing.Point(3, 86);
             this.lblMunicipioComercial.Name = "lblMunicipioComercial";
             this.lblMunicipioComercial.Size = new System.Drawing.Size(52, 13);
             this.lblMunicipioComercial.TabIndex = 107;
@@ -763,7 +720,7 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCepComercial.AutoSize = true;
             this.lblCepComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCepComercial.Location = new System.Drawing.Point(547, 131);
+            this.lblCepComercial.Location = new System.Drawing.Point(547, 123);
             this.lblCepComercial.Name = "lblCepComercial";
             this.lblCepComercial.Size = new System.Drawing.Size(28, 13);
             this.lblCepComercial.TabIndex = 109;
@@ -775,7 +732,7 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmailComercial.AutoSize = true;
             this.lblEmailComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailComercial.Location = new System.Drawing.Point(331, 170);
+            this.lblEmailComercial.Location = new System.Drawing.Point(331, 196);
             this.lblEmailComercial.Name = "lblEmailComercial";
             this.lblEmailComercial.Size = new System.Drawing.Size(32, 13);
             this.lblEmailComercial.TabIndex = 114;
@@ -785,7 +742,7 @@ namespace Fiscalizacao
             // 
             this.lblBairroComercial.AutoSize = true;
             this.lblBairroComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairroComercial.Location = new System.Drawing.Point(3, 128);
+            this.lblBairroComercial.Location = new System.Drawing.Point(3, 123);
             this.lblBairroComercial.Name = "lblBairroComercial";
             this.lblBairroComercial.Size = new System.Drawing.Size(34, 13);
             this.lblBairroComercial.TabIndex = 110;
@@ -796,7 +753,7 @@ namespace Fiscalizacao
             this.lblTelefoneComercial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTelefoneComercial.AutoSize = true;
             this.lblTelefoneComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefoneComercial.Location = new System.Drawing.Point(3, 170);
+            this.lblTelefoneComercial.Location = new System.Drawing.Point(3, 196);
             this.lblTelefoneComercial.Name = "lblTelefoneComercial";
             this.lblTelefoneComercial.Size = new System.Drawing.Size(49, 13);
             this.lblTelefoneComercial.TabIndex = 113;
@@ -808,7 +765,7 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstadoComercial.AutoSize = true;
             this.lblEstadoComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoComercial.Location = new System.Drawing.Point(649, 86);
+            this.lblEstadoComercial.Location = new System.Drawing.Point(648, 84);
             this.lblEstadoComercial.Name = "lblEstadoComercial";
             this.lblEstadoComercial.Size = new System.Drawing.Size(40, 13);
             this.lblEstadoComercial.TabIndex = 111;
@@ -818,7 +775,7 @@ namespace Fiscalizacao
             // 
             this.lblComplementoComercial.AutoSize = true;
             this.lblComplementoComercial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComplementoComercial.Location = new System.Drawing.Point(138, 49);
+            this.lblComplementoComercial.Location = new System.Drawing.Point(138, 47);
             this.lblComplementoComercial.Name = "lblComplementoComercial";
             this.lblComplementoComercial.Size = new System.Drawing.Size(71, 13);
             this.lblComplementoComercial.TabIndex = 112;
@@ -847,7 +804,7 @@ namespace Fiscalizacao
             this.tbpEnderecoResidencial.Location = new System.Drawing.Point(4, 25);
             this.tbpEnderecoResidencial.Name = "tbpEnderecoResidencial";
             this.tbpEnderecoResidencial.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpEnderecoResidencial.Size = new System.Drawing.Size(939, 226);
+            this.tbpEnderecoResidencial.Size = new System.Drawing.Size(946, 252);
             this.tbpEnderecoResidencial.TabIndex = 1;
             this.tbpEnderecoResidencial.Text = "Endereço Residencial";
             this.tbpEnderecoResidencial.UseVisualStyleBackColor = true;
@@ -855,9 +812,9 @@ namespace Fiscalizacao
             // NumeroResidencial
             // 
             this.NumeroResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumeroResidencial.Location = new System.Drawing.Point(6, 63);
+            this.NumeroResidencial.Location = new System.Drawing.Point(2, 63);
             this.NumeroResidencial.Name = "NumeroResidencial";
-            this.NumeroResidencial.Size = new System.Drawing.Size(126, 20);
+            this.NumeroResidencial.Size = new System.Drawing.Size(130, 20);
             this.NumeroResidencial.TabIndex = 124;
             // 
             // label1
@@ -875,25 +832,25 @@ namespace Fiscalizacao
             this.EmailResidencial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailResidencial.Location = new System.Drawing.Point(334, 152);
+            this.EmailResidencial.Location = new System.Drawing.Point(334, 206);
             this.EmailResidencial.Name = "EmailResidencial";
-            this.EmailResidencial.Size = new System.Drawing.Size(598, 20);
+            this.EmailResidencial.Size = new System.Drawing.Size(605, 20);
             this.EmailResidencial.TabIndex = 87;
             // 
             // TelefoneResidencial
             // 
             this.TelefoneResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefoneResidencial.Location = new System.Drawing.Point(6, 178);
+            this.TelefoneResidencial.Location = new System.Drawing.Point(3, 206);
             this.TelefoneResidencial.Name = "TelefoneResidencial";
-            this.TelefoneResidencial.Size = new System.Drawing.Size(322, 20);
+            this.TelefoneResidencial.Size = new System.Drawing.Size(325, 20);
             this.TelefoneResidencial.TabIndex = 86;
             // 
             // MunicipioResidencial
             // 
             this.MunicipioResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MunicipioResidencial.Location = new System.Drawing.Point(6, 100);
+            this.MunicipioResidencial.Location = new System.Drawing.Point(3, 100);
             this.MunicipioResidencial.Name = "MunicipioResidencial";
-            this.MunicipioResidencial.Size = new System.Drawing.Size(638, 20);
+            this.MunicipioResidencial.Size = new System.Drawing.Size(641, 20);
             this.MunicipioResidencial.TabIndex = 85;
             // 
             // EstadoResidencial
@@ -901,9 +858,9 @@ namespace Fiscalizacao
             this.EstadoResidencial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EstadoResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EstadoResidencial.Location = new System.Drawing.Point(651, 74);
+            this.EstadoResidencial.Location = new System.Drawing.Point(651, 100);
             this.EstadoResidencial.Name = "EstadoResidencial";
-            this.EstadoResidencial.Size = new System.Drawing.Size(282, 20);
+            this.EstadoResidencial.Size = new System.Drawing.Size(289, 20);
             this.EstadoResidencial.TabIndex = 84;
             // 
             // CEPResidencial
@@ -911,9 +868,9 @@ namespace Fiscalizacao
             this.CEPResidencial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CEPResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CEPResidencial.Location = new System.Drawing.Point(550, 113);
+            this.CEPResidencial.Location = new System.Drawing.Point(550, 139);
             this.CEPResidencial.Name = "CEPResidencial";
-            this.CEPResidencial.Size = new System.Drawing.Size(382, 20);
+            this.CEPResidencial.Size = new System.Drawing.Size(389, 20);
             this.CEPResidencial.TabIndex = 83;
             // 
             // ComplementoResidencial
@@ -921,17 +878,17 @@ namespace Fiscalizacao
             this.ComplementoResidencial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ComplementoResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComplementoResidencial.Location = new System.Drawing.Point(138, 37);
+            this.ComplementoResidencial.Location = new System.Drawing.Point(138, 63);
             this.ComplementoResidencial.Name = "ComplementoResidencial";
-            this.ComplementoResidencial.Size = new System.Drawing.Size(794, 20);
+            this.ComplementoResidencial.Size = new System.Drawing.Size(801, 20);
             this.ComplementoResidencial.TabIndex = 82;
             // 
             // BairroResidencial
             // 
             this.BairroResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BairroResidencial.Location = new System.Drawing.Point(6, 139);
+            this.BairroResidencial.Location = new System.Drawing.Point(3, 139);
             this.BairroResidencial.Name = "BairroResidencial";
-            this.BairroResidencial.Size = new System.Drawing.Size(538, 20);
+            this.BairroResidencial.Size = new System.Drawing.Size(541, 20);
             this.BairroResidencial.TabIndex = 73;
             // 
             // LogradouroResidencial
@@ -939,9 +896,9 @@ namespace Fiscalizacao
             this.LogradouroResidencial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LogradouroResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogradouroResidencial.Location = new System.Drawing.Point(6, -3);
+            this.LogradouroResidencial.Location = new System.Drawing.Point(2, 23);
             this.LogradouroResidencial.Name = "LogradouroResidencial";
-            this.LogradouroResidencial.Size = new System.Drawing.Size(926, 20);
+            this.LogradouroResidencial.Size = new System.Drawing.Size(937, 20);
             this.LogradouroResidencial.TabIndex = 72;
             // 
             // lblEmailResidencial
@@ -950,7 +907,7 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmailResidencial.AutoSize = true;
             this.lblEmailResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailResidencial.Location = new System.Drawing.Point(334, 136);
+            this.lblEmailResidencial.Location = new System.Drawing.Point(331, 190);
             this.lblEmailResidencial.Name = "lblEmailResidencial";
             this.lblEmailResidencial.Size = new System.Drawing.Size(32, 13);
             this.lblEmailResidencial.TabIndex = 81;
@@ -960,7 +917,7 @@ namespace Fiscalizacao
             // 
             this.lblTelefoneResidencial.AutoSize = true;
             this.lblTelefoneResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefoneResidencial.Location = new System.Drawing.Point(3, 162);
+            this.lblTelefoneResidencial.Location = new System.Drawing.Point(3, 188);
             this.lblTelefoneResidencial.Name = "lblTelefoneResidencial";
             this.lblTelefoneResidencial.Size = new System.Drawing.Size(49, 13);
             this.lblTelefoneResidencial.TabIndex = 80;
@@ -982,7 +939,7 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstadoResidencial.AutoSize = true;
             this.lblEstadoResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoResidencial.Location = new System.Drawing.Point(648, 58);
+            this.lblEstadoResidencial.Location = new System.Drawing.Point(648, 84);
             this.lblEstadoResidencial.Name = "lblEstadoResidencial";
             this.lblEstadoResidencial.Size = new System.Drawing.Size(40, 13);
             this.lblEstadoResidencial.TabIndex = 78;
@@ -1004,7 +961,7 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCepResidencial.AutoSize = true;
             this.lblCepResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCepResidencial.Location = new System.Drawing.Point(547, 97);
+            this.lblCepResidencial.Location = new System.Drawing.Point(547, 123);
             this.lblCepResidencial.Name = "lblCepResidencial";
             this.lblCepResidencial.Size = new System.Drawing.Size(28, 13);
             this.lblCepResidencial.TabIndex = 76;
@@ -1014,7 +971,7 @@ namespace Fiscalizacao
             // 
             this.lblLogradouroResidencial.AutoSize = true;
             this.lblLogradouroResidencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogradouroResidencial.Location = new System.Drawing.Point(3, 7);
+            this.lblLogradouroResidencial.Location = new System.Drawing.Point(3, 8);
             this.lblLogradouroResidencial.Name = "lblLogradouroResidencial";
             this.lblLogradouroResidencial.Size = new System.Drawing.Size(61, 13);
             this.lblLogradouroResidencial.TabIndex = 75;
@@ -1036,7 +993,7 @@ namespace Fiscalizacao
             this.tabInscricao.Location = new System.Drawing.Point(4, 25);
             this.tabInscricao.Name = "tabInscricao";
             this.tabInscricao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInscricao.Size = new System.Drawing.Size(939, 226);
+            this.tabInscricao.Size = new System.Drawing.Size(946, 252);
             this.tabInscricao.TabIndex = 2;
             this.tabInscricao.Text = "Inscrições";
             this.tabInscricao.UseVisualStyleBackColor = true;
@@ -1051,17 +1008,38 @@ namespace Fiscalizacao
             this.Situacao,
             this.DataInicio,
             this.DataFim});
-            this.dgvInscricoes.Location = new System.Drawing.Point(3, 17);
+            this.dgvInscricoes.Location = new System.Drawing.Point(0, 34);
             this.dgvInscricoes.Name = "dgvInscricoes";
-            this.dgvInscricoes.Size = new System.Drawing.Size(933, 203);
+            this.dgvInscricoes.Size = new System.Drawing.Size(946, 222);
             this.dgvInscricoes.TabIndex = 96;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "Inscrição";
+            this.Column5.Name = "Column5";
+            // 
+            // Situacao
+            // 
+            this.Situacao.HeaderText = "Situação";
+            this.Situacao.Name = "Situacao";
+            // 
+            // DataInicio
+            // 
+            this.DataInicio.HeaderText = "Inicio";
+            this.DataInicio.Name = "DataInicio";
+            // 
+            // DataFim
+            // 
+            this.DataFim.HeaderText = "Fim";
+            this.DataFim.Name = "DataFim";
             // 
             // tabContatos
             // 
             this.tabContatos.Controls.Add(this.dgvOutrosContatos);
             this.tabContatos.Location = new System.Drawing.Point(4, 25);
             this.tabContatos.Name = "tabContatos";
-            this.tabContatos.Size = new System.Drawing.Size(939, 226);
+            this.tabContatos.Size = new System.Drawing.Size(946, 252);
             this.tabContatos.TabIndex = 3;
             this.tabContatos.Text = "Outros Contatos";
             this.tabContatos.UseVisualStyleBackColor = true;
@@ -1077,9 +1055,9 @@ namespace Fiscalizacao
             this.TipoDeContato,
             this.Complemento,
             this.Ramal});
-            this.dgvOutrosContatos.Location = new System.Drawing.Point(6, 11);
+            this.dgvOutrosContatos.Location = new System.Drawing.Point(0, 34);
             this.dgvOutrosContatos.Name = "dgvOutrosContatos";
-            this.dgvOutrosContatos.Size = new System.Drawing.Size(933, 212);
+            this.dgvOutrosContatos.Size = new System.Drawing.Size(946, 222);
             this.dgvOutrosContatos.TabIndex = 95;
             // 
             // Contato
@@ -1112,7 +1090,7 @@ namespace Fiscalizacao
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(939, 226);
+            this.tabPage2.Size = new System.Drawing.Size(946, 252);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "RT";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1124,9 +1102,9 @@ namespace Fiscalizacao
             this.dgvRT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Rt});
-            this.dgvRT.Location = new System.Drawing.Point(3, 8);
+            this.dgvRT.Location = new System.Drawing.Point(0, 34);
             this.dgvRT.Name = "dgvRT";
-            this.dgvRT.Size = new System.Drawing.Size(933, 212);
+            this.dgvRT.Size = new System.Drawing.Size(946, 222);
             this.dgvRT.TabIndex = 1;
             this.dgvRT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRT_CellDoubleClick);
             // 
@@ -1141,7 +1119,7 @@ namespace Fiscalizacao
             this.tabPage8.Controls.Add(this.dgvART);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(939, 226);
+            this.tabPage8.Size = new System.Drawing.Size(946, 252);
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "ART";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1153,9 +1131,9 @@ namespace Fiscalizacao
             this.dgvART.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvART.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Art});
-            this.dgvART.Location = new System.Drawing.Point(3, 11);
+            this.dgvART.Location = new System.Drawing.Point(0, 34);
             this.dgvART.Name = "dgvART";
-            this.dgvART.Size = new System.Drawing.Size(933, 212);
+            this.dgvART.Size = new System.Drawing.Size(946, 222);
             this.dgvART.TabIndex = 0;
             this.dgvART.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgART_CellDoubleClick);
             // 
@@ -1171,29 +1149,41 @@ namespace Fiscalizacao
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(939, 226);
+            this.tabPage4.Size = new System.Drawing.Size(946, 252);
             this.tabPage4.TabIndex = 5;
             this.tabPage4.Text = "Formação";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dgvFormacao
             // 
+            this.dgvFormacao.AllowUserToAddRows = false;
+            this.dgvFormacao.AllowUserToDeleteRows = false;
             this.dgvFormacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFormacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFormacao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dgvFormacao.Location = new System.Drawing.Point(6, 11);
+            this.Column1,
+            this.Especialidade});
+            this.dgvFormacao.Location = new System.Drawing.Point(0, 34);
             this.dgvFormacao.Name = "dgvFormacao";
-            this.dgvFormacao.Size = new System.Drawing.Size(933, 212);
+            this.dgvFormacao.ReadOnly = true;
+            this.dgvFormacao.Size = new System.Drawing.Size(946, 222);
             this.dgvFormacao.TabIndex = 1;
             this.dgvFormacao.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFormacao_CellDoubleClick);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Tipo Inscrição";
+            this.Column1.HeaderText = "Formacao";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Especialidade
+            // 
+            this.Especialidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Especialidade.HeaderText = "Especialidade";
+            this.Especialidade.Name = "Especialidade";
+            this.Especialidade.ReadOnly = true;
             // 
             // tabPage5
             // 
@@ -1201,7 +1191,7 @@ namespace Fiscalizacao
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(939, 226);
+            this.tabPage5.Size = new System.Drawing.Size(946, 252);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "Ocorrências";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1213,9 +1203,9 @@ namespace Fiscalizacao
             this.dgvOcorrencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOcorrencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data});
-            this.dgvOcorrencias.Location = new System.Drawing.Point(6, 8);
+            this.dgvOcorrencias.Location = new System.Drawing.Point(0, 34);
             this.dgvOcorrencias.Name = "dgvOcorrencias";
-            this.dgvOcorrencias.Size = new System.Drawing.Size(933, 212);
+            this.dgvOcorrencias.Size = new System.Drawing.Size(946, 222);
             this.dgvOcorrencias.TabIndex = 0;
             this.dgvOcorrencias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOcorrencias_CellDoubleClick);
             // 
@@ -1238,30 +1228,26 @@ namespace Fiscalizacao
             // 
             // dgvFinanceiro
             // 
+            this.dgvFinanceiro.AllowUserToAddRows = false;
+            this.dgvFinanceiro.AllowUserToDeleteRows = false;
             this.dgvFinanceiro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFinanceiro.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dgvFinanceiro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFinanceiro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
+            this.clSituacao,
             this.crAno,
-            this.Valor});
+            this.tipoLancamento,
+            this.valorLiquido,
+            this.ValorBruto});
             this.dgvFinanceiro.Location = new System.Drawing.Point(6, 6);
             this.dgvFinanceiro.Name = "dgvFinanceiro";
+            this.dgvFinanceiro.ReadOnly = true;
+            this.dgvFinanceiro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFinanceiro.Size = new System.Drawing.Size(948, 235);
             this.dgvFinanceiro.TabIndex = 0;
-            this.dgvFinanceiro.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
-            // 
-            // crAno
-            // 
-            this.crAno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.crAno.HeaderText = "Ano";
-            this.crAno.Name = "crAno";
-            // 
-            // Valor
-            // 
-            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
+            this.dgvFinanceiro.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFinanceiro_CellDoubleClick);
             // 
             // tabPage1
             // 
@@ -1326,7 +1312,7 @@ namespace Fiscalizacao
             // 
             // btnFechar
             // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnFechar.Location = new System.Drawing.Point(16, 714);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
@@ -1335,26 +1321,46 @@ namespace Fiscalizacao
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // Column5
+            // Column2
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Inscrição";
-            this.Column5.Name = "Column5";
+            this.Column2.HeaderText = "ID";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
             // 
-            // Situacao
+            // clSituacao
             // 
-            this.Situacao.HeaderText = "Situação";
-            this.Situacao.Name = "Situacao";
+            this.clSituacao.HeaderText = "Situação";
+            this.clSituacao.Name = "clSituacao";
+            this.clSituacao.ReadOnly = true;
             // 
-            // DataInicio
+            // crAno
             // 
-            this.DataInicio.HeaderText = "Inicio";
-            this.DataInicio.Name = "DataInicio";
+            this.crAno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.crAno.HeaderText = "Ano";
+            this.crAno.Name = "crAno";
+            this.crAno.ReadOnly = true;
             // 
-            // DataFim
+            // tipoLancamento
             // 
-            this.DataFim.HeaderText = "Fim";
-            this.DataFim.Name = "DataFim";
+            this.tipoLancamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tipoLancamento.HeaderText = "Tipo de Lançamento";
+            this.tipoLancamento.Name = "tipoLancamento";
+            this.tipoLancamento.ReadOnly = true;
+            // 
+            // valorLiquido
+            // 
+            this.valorLiquido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.valorLiquido.HeaderText = "Valor Líquido";
+            this.valorLiquido.Name = "valorLiquido";
+            this.valorLiquido.ReadOnly = true;
+            // 
+            // ValorBruto
+            // 
+            this.ValorBruto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ValorBruto.HeaderText = "Valor Bruto";
+            this.ValorBruto.Name = "ValorBruto";
+            this.ValorBruto.ReadOnly = true;
             // 
             // frmCadastros
             // 
@@ -1407,7 +1413,7 @@ namespace Fiscalizacao
         private System.Windows.Forms.TabControl tabEnderecoComercial;
         private System.Windows.Forms.TabPage tbpEnderecoComercial;
         private System.Windows.Forms.TabPage tbpEnderecoResidencial;
-        private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.TextBox ComplementoSituacao;
         private System.Windows.Forms.TextBox NumeroProcessoAntigo;
         private System.Windows.Forms.TextBox SituacaoAtual;
         private System.Windows.Forms.TextBox txtValidadeDaInscricao;
@@ -1477,13 +1483,9 @@ namespace Fiscalizacao
         private System.Windows.Forms.Label lblUltimaVisita;
         private System.Windows.Forms.TextBox DataUltimaVisita;
         private System.Windows.Forms.Label lblAdimplente;
-        private System.Windows.Forms.TextBox Adimplente;
+        private System.Windows.Forms.TextBox Inadimplente;
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.PictureBox Foto;
-        private System.Windows.Forms.Label lblART;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label lblRT;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label lblNascimentoFundacao;
         private System.Windows.Forms.TextBox DataNascimentoFundacao;
         private System.Windows.Forms.Label lblNomeSocial;
@@ -1498,13 +1500,10 @@ namespace Fiscalizacao
         private System.Windows.Forms.DataGridViewTextBoxColumn Ano;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridView dgvFinanceiro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn crAno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rt;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.DataGridView dgvART;
         private System.Windows.Forms.DataGridViewTextBoxColumn Art;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.TextBox NomeAbreviado;
         private System.Windows.Forms.Label lblNomeFantasia;
@@ -1516,5 +1515,13 @@ namespace Fiscalizacao
         private System.Windows.Forms.DataGridViewTextBoxColumn Situacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataFim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Especialidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSituacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn crAno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoLancamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorLiquido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorBruto;
     }
 }

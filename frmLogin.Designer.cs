@@ -88,6 +88,7 @@ namespace Fiscalizacao
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(207, 26);
             this.txtUsuario.TabIndex = 3;
+            
             // 
             // txtSenha
             // 

@@ -3,6 +3,9 @@ using Fiscalizacao.Quellon;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using System.Linq.Expressions;
+using System;
+
 namespace Fiscalizacao.Repository
 {
     public class PessoaRepository
@@ -40,6 +43,11 @@ namespace Fiscalizacao.Repository
         public IEnumerable<PessoaModel> BuscarTodos()
         {
             return ctx.Pessoa;
+        }
+
+        public IEnumerable<PessoaModel> BuscarTodos(Expression<Func<PessoaModel, bool>> predicate)
+        {
+            return ctx.Pessoa.Where(predicate);
         }
 
         public PessoaModel BuscarPorId(int id)

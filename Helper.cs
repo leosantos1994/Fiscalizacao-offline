@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fiscalizacao.Models;
+using Models;
 
 namespace Fiscalizacao
 {
@@ -13,6 +16,10 @@ namespace Fiscalizacao
         {
             foreach (var property in model.GetType().GetProperties())
             {
+                Attribute attri = property.GetCustomAttribute(typeof(IgnorePropertyAttribute), true);
+                if (attri is IgnorePropertyAttribute)
+                    continue;
+
                 Control c = form.Controls.Find(property.Name, true).FirstOrDefault();
 
                 if (c != null)

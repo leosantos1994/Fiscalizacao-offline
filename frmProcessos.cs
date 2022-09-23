@@ -172,5 +172,10 @@ namespace Fiscalizacao
         {
 
         }
+
+        private void dgvProcessosInfracoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
