@@ -13,7 +13,7 @@ namespace Fiscalizacao.Repository
         //    }, true)
         //{ }
 
-        public AppDBContext() : base("mydb2")
+        public AppDBContext() : base("mydb10")
         {
 
         }
@@ -93,7 +93,7 @@ namespace Fiscalizacao.Repository
 
             modelBuilder.Entity<Models.ProcessoFiscalizacaoModel>()
                             .HasOptional<Models.PessoaModel>(p => p.Representante)
-                            .WithMany(p => p.ProcessoRepresentateFiscalizacao)
+                            .WithMany(p => p.ProcessoRepresentanteFiscalizacao)
                             .HasForeignKey<int?>(s => s.RepresentanteId)
                             .WillCascadeOnDelete(false);
         }
@@ -101,15 +101,15 @@ namespace Fiscalizacao.Repository
         private void ProcessoConfiguration(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Models.ProcessoModel>()
-                                .HasOptional<Models.PessoaModel>(p => p.Representado)
-                                .WithMany(p => p.ProcessoRepresentado)
-                                .HasForeignKey<int?>(s => s.RepresentadoId)
+                                .HasRequired(p => p.Representado)
+                                .WithMany()
+                                .HasForeignKey(s => s.RepresentadoId)
                                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Models.ProcessoModel>()
-                            .HasOptional<Models.PessoaModel>(p => p.Representante)
-                            .WithMany(p => p.ProcessoRepresentate)
-                            .HasForeignKey<int?>(s => s.RepresentanteId)
+                            .HasOptional(p => p.Representante)
+                            .WithMany()
+                            .HasForeignKey(s => s.RepresentanteId)
                             .WillCascadeOnDelete(false);
         }
 
@@ -158,9 +158,9 @@ namespace Fiscalizacao.Repository
         private void ProtocoloConfiguration(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Models.ProtocoloModel>()
-                    .HasOptional<Models.PessoaModel>(p => p.Pessoa)
+                    .HasRequired<Models.PessoaModel>(p => p.Pessoa)
                     .WithMany(p => p.Protocolo)
-                    .HasForeignKey<int?>(s => s.PessoaId)
+                    .HasForeignKey<int>(s => s.PessoaId)
                     .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Models.ProtocoloModel>()

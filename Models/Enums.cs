@@ -68,4 +68,22 @@ namespace Fiscalizacao.Models
         Secretaria,
         TED
     }
+
+    public enum VinculoProfissionalTipo
+    {
+        [Description("RT - Responsável Técnico")]
+        RT = 1,
+        [Description("ART- Anotação de Responsabilidade Técnica")]
+        ART
+    }
+    public enum Protocolos
+    {
+        [Description("Protocolo")]
+        Protocolo,
+        [Description("DataProtocolo")]
+        Data,
+        [Description("RegistroConselho")]
+        NumeroRegistro
+    }
+
 }

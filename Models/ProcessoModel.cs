@@ -6,8 +6,8 @@ namespace Fiscalizacao.Models
 {
     public class ProcessoModel : ModelBase
     {
-        public int? RepresentanteId { get; set; }
-        public int? RepresentadoId { get; set; }
+        public int RepresentanteId { get; set; }
+        public int RepresentadoId { get; set; }
         public virtual PessoaModel Representante { get; set; }
         public virtual PessoaModel Representado { get; set; }
         public virtual ICollection<ProcessoTramiteModel> ProcessoTramite { get; set; }
@@ -38,5 +38,6 @@ namespace Fiscalizacao.Models
         public DateTime DataValidade { get; set; }
         public string Orientacoes { get; set; }
         public ModuloProcesso Modulo { get; set; }
+        public IEnumerable<object> Infracao { get; set; }
     }
 }

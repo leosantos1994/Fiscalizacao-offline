@@ -75,7 +75,6 @@ namespace Fiscalizacao.Quellon
             xml.addColumnSelect("CEPComercial.CEP", "CEPComercial");
             xml.addColumnSelect("MunicipioComercial.Descricao", "MunicipioComercial");
             xml.addColumnSelect("EstadoComercial.Sigla", "EstadoComercial");
-
             xml.addColumnSelect("SituacaoAtual.Descricao", "StuacaoAtual");
             xml.addColumnSelect("ComplementoSituacao.Descricao", "ComplementoSituacao");
             xml.addColumnSelect("MotivoSituacaoAtual.Descricao", "MotivoSituacao");

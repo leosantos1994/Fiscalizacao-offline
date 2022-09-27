@@ -17,7 +17,7 @@ namespace Fiscalizacao.Quellon
         {
             using (IXMLMaker xml = config.Consulta("ProtocoloDocumento"))
             {
-                xml.addMultiColumnsSelect(ColunasSimplesProtocolo());
+                ColunasSimplesProtocolo(xml);
                 AdicionarCamposJoinProtocolo(xml);
                 xml.addFilterColumnSelect("Remetente", XMLMaker.EstaEm, pessoas, XMLMaker.E);
                 xml.addFilterColumnSelect("Sociedade", XMLMaker.EstaEm, pessoas, XMLMaker.Or);
@@ -25,14 +25,22 @@ namespace Fiscalizacao.Quellon
             }
         }
 
-        private string ColunasSimplesProtocolo()
+        private void ColunasSimplesProtocolo(IXMLMaker xml)
         {
-            return "NumeroDocumento, TaxasLiquidadas, Concluido, Autuado, DataDocumento," +
-                   "DataCadastro, DataProtocolo,Observacao";
+            xml.addColumnSelect("NumeroDocumento");
+            xml.addColumnSelect("TaxasLiquidadas");
+            xml.addColumnSelect("Concluido");
+            xml.addColumnSelect("Autuado");
+            xml.addColumnSelect("DataDocumento");
+            xml.addColumnSelect("DataCadastro");
+            xml.addColumnSelect("DataProtocolo");
+            xml.addColumnSelect("Observacao");
         }
 
         private void AdicionarCamposJoinProtocolo(IXMLMaker xml)
         {
+            xml.addColumnSelect("Remetente", "PessoaId");
+            xml.addColumnSelect("Sociedade", "SociedadeId");
             xml.addColumnSelect("TipoAssunto.Descricao", "TipoAssunto");
             xml.addColumnSelect("TipoPedido.Descricao", "TipoProcesso");
             xml.addColumnSelect("Protocolo.NumeroProtocolo", "Protocolo");
@@ -40,8 +48,6 @@ namespace Fiscalizacao.Quellon
             xml.addColumnSelect("DepartamentoDestino.Descricao", "DepartamentoDestino");
             xml.addColumnSelect("ColaboradorOrigem.Nome", "ColaboradorOrigem");
             xml.addColumnSelect("ColaboradorDestino.Nome", "ColaboradorDestino");
-            xml.addColumnSelect("Remetente", "PessoaId");
-            xml.addColumnSelect("Sociedade", "SociedadeId");
         }
     }
 }

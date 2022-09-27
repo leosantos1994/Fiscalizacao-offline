@@ -76,7 +76,7 @@ namespace Fiscalizacao
             // 
             // DataInicial
             // 
-            this.DataInicial.Location = new System.Drawing.Point(12, 67);
+            this.DataInicial.Location = new System.Drawing.Point(12, 60);
             this.DataInicial.Name = "DataInicial";
             this.DataInicial.Size = new System.Drawing.Size(482, 20);
             this.DataInicial.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace Fiscalizacao
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 50);
+            this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 2;
@@ -92,7 +92,7 @@ namespace Fiscalizacao
             // 
             // DataAcordao
             // 
-            this.DataAcordao.Location = new System.Drawing.Point(12, 115);
+            this.DataAcordao.Location = new System.Drawing.Point(12, 99);
             this.DataAcordao.Name = "DataAcordao";
             this.DataAcordao.Size = new System.Drawing.Size(482, 20);
             this.DataAcordao.TabIndex = 5;
@@ -100,7 +100,7 @@ namespace Fiscalizacao
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 98);
+            this.label3.Location = new System.Drawing.Point(12, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 4;
@@ -108,7 +108,7 @@ namespace Fiscalizacao
             // 
             // DataValidadeInscricao
             // 
-            this.DataValidadeInscricao.Location = new System.Drawing.Point(12, 161);
+            this.DataValidadeInscricao.Location = new System.Drawing.Point(12, 137);
             this.DataValidadeInscricao.Name = "DataValidadeInscricao";
             this.DataValidadeInscricao.Size = new System.Drawing.Size(482, 20);
             this.DataValidadeInscricao.TabIndex = 7;
@@ -116,7 +116,7 @@ namespace Fiscalizacao
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 148);
+            this.label4.Location = new System.Drawing.Point(12, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 6;
@@ -124,7 +124,7 @@ namespace Fiscalizacao
             // 
             // Livro
             // 
-            this.Livro.Location = new System.Drawing.Point(12, 207);
+            this.Livro.Location = new System.Drawing.Point(12, 177);
             this.Livro.Name = "Livro";
             this.Livro.Size = new System.Drawing.Size(160, 20);
             this.Livro.TabIndex = 9;
@@ -132,7 +132,7 @@ namespace Fiscalizacao
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 235);
+            this.label5.Location = new System.Drawing.Point(9, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 13);
             this.label5.TabIndex = 8;
@@ -140,7 +140,7 @@ namespace Fiscalizacao
             // 
             // LegislacaoConcessao
             // 
-            this.LegislacaoConcessao.Location = new System.Drawing.Point(12, 251);
+            this.LegislacaoConcessao.Location = new System.Drawing.Point(12, 219);
             this.LegislacaoConcessao.Name = "LegislacaoConcessao";
             this.LegislacaoConcessao.Size = new System.Drawing.Size(482, 20);
             this.LegislacaoConcessao.TabIndex = 11;
@@ -148,7 +148,7 @@ namespace Fiscalizacao
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 191);
+            this.label6.Location = new System.Drawing.Point(12, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 10;
@@ -156,7 +156,7 @@ namespace Fiscalizacao
             // 
             // Sessao
             // 
-            this.Sessao.Location = new System.Drawing.Point(12, 301);
+            this.Sessao.Location = new System.Drawing.Point(12, 258);
             this.Sessao.Name = "Sessao";
             this.Sessao.Size = new System.Drawing.Size(482, 20);
             this.Sessao.TabIndex = 13;
@@ -164,7 +164,7 @@ namespace Fiscalizacao
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 284);
+            this.label7.Location = new System.Drawing.Point(12, 242);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 12;
@@ -188,7 +188,7 @@ namespace Fiscalizacao
             // 
             // DataFinal
             // 
-            this.DataFinal.Location = new System.Drawing.Point(529, 67);
+            this.DataFinal.Location = new System.Drawing.Point(529, 60);
             this.DataFinal.Name = "DataFinal";
             this.DataFinal.Size = new System.Drawing.Size(259, 20);
             this.DataFinal.TabIndex = 17;
@@ -196,7 +196,7 @@ namespace Fiscalizacao
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(526, 50);
+            this.label9.Location = new System.Drawing.Point(526, 44);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 16;
@@ -204,7 +204,7 @@ namespace Fiscalizacao
             // 
             // DataCompromisso
             // 
-            this.DataCompromisso.Location = new System.Drawing.Point(529, 115);
+            this.DataCompromisso.Location = new System.Drawing.Point(529, 99);
             this.DataCompromisso.Name = "DataCompromisso";
             this.DataCompromisso.Size = new System.Drawing.Size(259, 20);
             this.DataCompromisso.TabIndex = 19;
@@ -212,7 +212,7 @@ namespace Fiscalizacao
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(526, 98);
+            this.label10.Location = new System.Drawing.Point(526, 83);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(95, 13);
             this.label10.TabIndex = 18;
@@ -220,7 +220,7 @@ namespace Fiscalizacao
             // 
             // DataValidadeCarteira
             // 
-            this.DataValidadeCarteira.Location = new System.Drawing.Point(529, 161);
+            this.DataValidadeCarteira.Location = new System.Drawing.Point(529, 138);
             this.DataValidadeCarteira.Name = "DataValidadeCarteira";
             this.DataValidadeCarteira.Size = new System.Drawing.Size(259, 20);
             this.DataValidadeCarteira.TabIndex = 21;
@@ -228,15 +228,16 @@ namespace Fiscalizacao
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(526, 144);
+            this.label11.Location = new System.Drawing.Point(526, 122);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(143, 13);
             this.label11.TabIndex = 20;
             this.label11.Text = "Validade Carteira Profissional";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // Folha
             // 
-            this.Folha.Location = new System.Drawing.Point(254, 207);
+            this.Folha.Location = new System.Drawing.Point(246, 177);
             this.Folha.Name = "Folha";
             this.Folha.Size = new System.Drawing.Size(100, 20);
             this.Folha.TabIndex = 23;
@@ -244,7 +245,7 @@ namespace Fiscalizacao
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(251, 190);
+            this.label12.Location = new System.Drawing.Point(243, 160);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(33, 13);
             this.label12.TabIndex = 22;
@@ -252,7 +253,7 @@ namespace Fiscalizacao
             // 
             // Especialidade
             // 
-            this.Especialidade.Location = new System.Drawing.Point(529, 207);
+            this.Especialidade.Location = new System.Drawing.Point(529, 177);
             this.Especialidade.Name = "Especialidade";
             this.Especialidade.Size = new System.Drawing.Size(259, 20);
             this.Especialidade.TabIndex = 25;
@@ -260,7 +261,7 @@ namespace Fiscalizacao
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(526, 190);
+            this.label13.Location = new System.Drawing.Point(526, 161);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 13);
             this.label13.TabIndex = 24;

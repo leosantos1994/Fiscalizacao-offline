@@ -1,4 +1,5 @@
 ﻿using Fiscalizacao.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,6 +23,11 @@ namespace Fiscalizacao.Repository
 
             ctx.Protocolo.BulkUpdate(models);
             ctx.Protocolo.BulkInsert(models, (o) => { o.InsertIfNotExists = true; });
+        }
+
+        public ProtocoloModel BuscarPorId(object id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -3,8 +3,8 @@ namespace Fiscalizacao.Models
 {
     public class ProtocoloModel : ModelBase
     {
-        public int? PessoaId { get; set; }
-        public int? PessoaJuridicaId { get; set; }
+        public int PessoaId { get; set; }
+        public int PessoaJuridicaId { get; set; } 
         public virtual PessoaModel Pessoa { get; set; }
         public virtual PessoaModel PessoaJuridica { get; set; }
         public string NumeroDocumento { get; set; }
@@ -15,7 +15,7 @@ namespace Fiscalizacao.Models
         public DateTime? DataDocumento { get; set; }
         public DateTime? DataCadastro { get; set; }
         public string TipoPedido { get; set; }
-        public DateTime? DataProtocolo { get; set; }
+        public DateTime DataProtocolo { get; set; }
         public string Protocolo { get; set; }
         public string Observacao { get; set; }
         public string DepartamentoOrigem { get; set; }

@@ -32,5 +32,6 @@ namespace Fiscalizacao.Models
         public SituacaoVinculo Situacao { get; set; }
         public string Turno { get; set; }
         public string TipoART { get; set; }
+        public VinculoProfissionalTipo VinculoProfissionalTipo { get; set; }
     }
 }

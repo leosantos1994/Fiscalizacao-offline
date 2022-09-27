@@ -17,8 +17,8 @@ namespace DAO.Repository
         {
             var lista = models.GroupBy(p => p.Id).Select(g => g.First()).ToList();
 
-            var pessoas = models.Select(x => x.RepresentadoId).ToList();
-            pessoas.AddRange(models.Select(x => x.RepresentanteId).ToList());
+            var pessoas = models.Select(x => x.RepresentadoId.Value).ToList();
+            pessoas.AddRange(models.Select(x => x.RepresentanteId.Value).ToList());
             new PessoaRepository(ctx).TratarPessoaNaoExistente(pessoas);
 
             ctx.ProcessoFiscalizacao.BulkUpdate(models);

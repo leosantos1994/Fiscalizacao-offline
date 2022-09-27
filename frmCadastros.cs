@@ -23,6 +23,8 @@ namespace Fiscalizacao
             GridContatos();
             GridFormacao();
             GridFinanceiro();
+            GridOcorrencias();
+            GridProtocolos();
         }
 
         private void GridInscricoes()
@@ -59,7 +61,28 @@ namespace Fiscalizacao
                 dgvFinanceiro.Rows.Add(item.Id, item.Situacao, item.Ano, item.TipoLancamento, item.ValorLiquido, item.ValorBruto);
             }
         }
+        private void GridOcorrencias()
+        {
+            dgvOcorrencias.Rows.Clear();
+            foreach (var item in model.Ocorrencia)
+            {
+                dgvOcorrencias.Rows.Add(item.Id, item.Classificacao,
+                    item.Data.ToString("dd/MM/yyyy"),
+                    item.DataFim > DateTime.MinValue ? item.DataFim.ToString("dd/MM/yyyy") : "");
+            }
 
+        }
+
+        private void GridProtocolos()
+        {
+            dgvProtocolos.Rows.Clear();
+            foreach (var item in model.Protocolo)
+            {
+                dgvProtocolos.Rows.Add(item.Id, item.Protocolo, item.TipoAssunto,
+                    item.DataProtocolo.ToString("dd/MM/yyyy"));          
+            }
+
+        }
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -69,7 +92,7 @@ namespace Fiscalizacao
         #region EventoClick
         private void dgvProtocolos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            new frmProtocolo().ShowDialog();
+           new frmProtocolo().ShowDialog();
         }
         private void dgvProcessos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -97,6 +120,42 @@ namespace Fiscalizacao
         {
             string id = (sender as DataGridView).Rows[e.RowIndex].Cells[0].Value.ToString();
             new frmFinanceiro(int.Parse(id)).ShowDialog();
+        }
+
+
+        private void Nome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbpEnderecoResidencial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTelefoneComercial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCorrespondenciaComercial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLogradouroComercial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEstadoComercial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TelefoneResidencial_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

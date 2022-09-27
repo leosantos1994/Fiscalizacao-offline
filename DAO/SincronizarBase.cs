@@ -77,7 +77,7 @@ namespace Fiscalizacao.DAO
             new VinculoProfissionalRepository(ctx).InsereOuAtualiza(daovinculos.Buscar(pessoas));
         }
 
-        public void IniciarMickey(string site, string user, string pass)
+        public void IniciarMarciel(string site, string user, string pass)
         {
             QuellonConfig.Instancia.Login(site, user, pass);
 
@@ -97,7 +97,7 @@ namespace Fiscalizacao.DAO
             var ctx = new AppDBContext();
             var repo = new PessoaRepository(ctx);
 
-            var result = dao.BuscarInformacoesPessoas(14104.ToString());
+            var result = dao.BuscarInformacoesPessoas(135640.ToString());
             repo.InsereOuAtualiza(result);
 
             string pessoas = string.Join(",", result.Select(pessoa => pessoa.Id).ToArray());

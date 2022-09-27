@@ -65,7 +65,7 @@ namespace Fiscalizacao
             // 
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnFechar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnFechar.Location = new System.Drawing.Point(12, 526);
+            this.btnFechar.Location = new System.Drawing.Point(12, 714);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
             this.btnFechar.TabIndex = 0;
@@ -93,9 +93,10 @@ namespace Fiscalizacao
             // 
             // lblProtocoloEletronico
             // 
-            this.lblProtocoloEletronico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProtocoloEletronico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProtocoloEletronico.AutoSize = true;
-            this.lblProtocoloEletronico.Location = new System.Drawing.Point(540, 129);
+            this.lblProtocoloEletronico.Location = new System.Drawing.Point(610, 129);
             this.lblProtocoloEletronico.Name = "lblProtocoloEletronico";
             this.lblProtocoloEletronico.Size = new System.Drawing.Size(102, 13);
             this.lblProtocoloEletronico.TabIndex = 22;
@@ -106,7 +107,7 @@ namespace Fiscalizacao
             this.lblAssunto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAssunto.AutoSize = true;
-            this.lblAssunto.Location = new System.Drawing.Point(9, 367);
+            this.lblAssunto.Location = new System.Drawing.Point(6, 473);
             this.lblAssunto.Name = "lblAssunto";
             this.lblAssunto.Size = new System.Drawing.Size(45, 13);
             this.lblAssunto.TabIndex = 21;
@@ -123,9 +124,10 @@ namespace Fiscalizacao
             // 
             // lblTipoPedido
             // 
-            this.lblTipoPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTipoPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTipoPedido.AutoSize = true;
-            this.lblTipoPedido.Location = new System.Drawing.Point(540, 168);
+            this.lblTipoPedido.Location = new System.Drawing.Point(610, 168);
             this.lblTipoPedido.Name = "lblTipoPedido";
             this.lblTipoPedido.Size = new System.Drawing.Size(79, 13);
             this.lblTipoPedido.TabIndex = 17;
@@ -134,7 +136,7 @@ namespace Fiscalizacao
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(623, 90);
+            this.lblData.Location = new System.Drawing.Point(610, 90);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(30, 13);
             this.lblData.TabIndex = 16;
@@ -157,7 +159,6 @@ namespace Fiscalizacao
             this.lblRemetente.Size = new System.Drawing.Size(59, 13);
             this.lblRemetente.TabIndex = 14;
             this.lblRemetente.Text = "Remetente";
-            this.lblRemetente.Click += new System.EventHandler(this.lblRemetente_Click);
             // 
             // lblNumeroInscricao
             // 
@@ -172,7 +173,7 @@ namespace Fiscalizacao
             // 
             this.DataCadastro.Location = new System.Drawing.Point(9, 184);
             this.DataCadastro.Name = "DataCadastro";
-            this.DataCadastro.Size = new System.Drawing.Size(495, 20);
+            this.DataCadastro.Size = new System.Drawing.Size(598, 20);
             this.DataCadastro.TabIndex = 25;
             // 
             // RegistroConselho
@@ -181,22 +182,23 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegistroConselho.Location = new System.Drawing.Point(9, 28);
             this.RegistroConselho.Name = "RegistroConselho";
-            this.RegistroConselho.Size = new System.Drawing.Size(863, 20);
+            this.RegistroConselho.Size = new System.Drawing.Size(963, 20);
             this.RegistroConselho.TabIndex = 26;
             // 
             // Protocolo
             // 
             this.Protocolo.Location = new System.Drawing.Point(9, 106);
             this.Protocolo.Name = "Protocolo";
-            this.Protocolo.Size = new System.Drawing.Size(579, 20);
+            this.Protocolo.Size = new System.Drawing.Size(598, 20);
             this.Protocolo.TabIndex = 27;
             // 
             // TipoPedido
             // 
-            this.TipoPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TipoPedido.Location = new System.Drawing.Point(543, 184);
+            this.TipoPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TipoPedido.Location = new System.Drawing.Point(613, 184);
             this.TipoPedido.Name = "TipoPedido";
-            this.TipoPedido.Size = new System.Drawing.Size(329, 20);
+            this.TipoPedido.Size = new System.Drawing.Size(359, 20);
             this.TipoPedido.TabIndex = 29;
             // 
             // NumeroProcesso
@@ -205,38 +207,39 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NumeroProcesso.Location = new System.Drawing.Point(9, 67);
             this.NumeroProcesso.Name = "NumeroProcesso";
-            this.NumeroProcesso.Size = new System.Drawing.Size(863, 20);
+            this.NumeroProcesso.Size = new System.Drawing.Size(963, 20);
             this.NumeroProcesso.TabIndex = 30;
             // 
             // txtTipoInscricao
             // 
             this.txtTipoInscricao.Location = new System.Drawing.Point(9, 145);
             this.txtTipoInscricao.Name = "txtTipoInscricao";
-            this.txtTipoInscricao.Size = new System.Drawing.Size(495, 20);
+            this.txtTipoInscricao.Size = new System.Drawing.Size(598, 20);
             this.txtTipoInscricao.TabIndex = 31;
             // 
             // SolicitacaoServico
             // 
-            this.SolicitacaoServico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SolicitacaoServico.Location = new System.Drawing.Point(543, 145);
+            this.SolicitacaoServico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SolicitacaoServico.Location = new System.Drawing.Point(613, 145);
             this.SolicitacaoServico.Name = "SolicitacaoServico";
-            this.SolicitacaoServico.Size = new System.Drawing.Size(329, 20);
+            this.SolicitacaoServico.Size = new System.Drawing.Size(359, 20);
             this.SolicitacaoServico.TabIndex = 32;
             // 
             // TipoAssunto
             // 
             this.TipoAssunto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TipoAssunto.Location = new System.Drawing.Point(12, 383);
+            this.TipoAssunto.Location = new System.Drawing.Point(6, 489);
             this.TipoAssunto.Name = "TipoAssunto";
-            this.TipoAssunto.Size = new System.Drawing.Size(860, 20);
+            this.TipoAssunto.Size = new System.Drawing.Size(963, 20);
             this.TipoAssunto.TabIndex = 33;
             // 
             // Remetente
             // 
-            this.Remetente.Location = new System.Drawing.Point(9, 227);
+            this.Remetente.Location = new System.Drawing.Point(9, 223);
             this.Remetente.Name = "Remetente";
-            this.Remetente.Size = new System.Drawing.Size(403, 20);
+            this.Remetente.Size = new System.Drawing.Size(598, 20);
             this.Remetente.TabIndex = 34;
             // 
             // DataProtocolo
@@ -245,7 +248,7 @@ namespace Fiscalizacao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataProtocolo.Location = new System.Drawing.Point(613, 106);
             this.DataProtocolo.Name = "DataProtocolo";
-            this.DataProtocolo.Size = new System.Drawing.Size(259, 20);
+            this.DataProtocolo.Size = new System.Drawing.Size(359, 20);
             this.DataProtocolo.TabIndex = 38;
             // 
             // lblObservação
@@ -253,7 +256,7 @@ namespace Fiscalizacao
             this.lblObservação.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblObservação.AutoSize = true;
-            this.lblObservação.Location = new System.Drawing.Point(9, 407);
+            this.lblObservação.Location = new System.Drawing.Point(6, 513);
             this.lblObservação.Name = "lblObservação";
             this.lblObservação.Size = new System.Drawing.Size(65, 13);
             this.lblObservação.TabIndex = 39;
@@ -262,27 +265,27 @@ namespace Fiscalizacao
             // lblTramites
             // 
             this.lblTramites.AutoSize = true;
-            this.lblTramites.Location = new System.Drawing.Point(6, 250);
+            this.lblTramites.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTramites.Location = new System.Drawing.Point(6, 278);
             this.lblTramites.Name = "lblTramites";
-            this.lblTramites.Size = new System.Drawing.Size(47, 13);
+            this.lblTramites.Size = new System.Drawing.Size(55, 13);
             this.lblTramites.TabIndex = 40;
             this.lblTramites.Text = "Trâmites";
             // 
             // lblDepartamentoOrigem
             // 
             this.lblDepartamentoOrigem.AutoSize = true;
-            this.lblDepartamentoOrigem.Location = new System.Drawing.Point(3, 5);
+            this.lblDepartamentoOrigem.Location = new System.Drawing.Point(-3, 5);
             this.lblDepartamentoOrigem.Name = "lblDepartamentoOrigem";
             this.lblDepartamentoOrigem.Size = new System.Drawing.Size(125, 13);
             this.lblDepartamentoOrigem.TabIndex = 41;
             this.lblDepartamentoOrigem.Text = "Departamento de Origem";
-            this.lblDepartamentoOrigem.Click += new System.EventHandler(this.lblOrigem_Click);
             // 
             // lblDepartamentoDestino
             // 
             this.lblDepartamentoDestino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDepartamentoDestino.AutoSize = true;
-            this.lblDepartamentoDestino.Location = new System.Drawing.Point(3, 44);
+            this.lblDepartamentoDestino.Location = new System.Drawing.Point(-3, 44);
             this.lblDepartamentoDestino.Name = "lblDepartamentoDestino";
             this.lblDepartamentoDestino.Size = new System.Drawing.Size(128, 13);
             this.lblDepartamentoDestino.TabIndex = 43;
@@ -292,37 +295,41 @@ namespace Fiscalizacao
             // 
             this.Observacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Observacao.Location = new System.Drawing.Point(12, 423);
+            this.Observacao.Location = new System.Drawing.Point(6, 529);
             this.Observacao.Multiline = true;
             this.Observacao.Name = "Observacao";
-            this.Observacao.Size = new System.Drawing.Size(860, 86);
+            this.Observacao.Size = new System.Drawing.Size(963, 86);
             this.Observacao.TabIndex = 45;
             // 
             // DepartamentoDestino
             // 
-            this.DepartamentoDestino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DepartamentoDestino.Location = new System.Drawing.Point(3, 60);
+            this.DepartamentoDestino.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DepartamentoDestino.Location = new System.Drawing.Point(0, 60);
             this.DepartamentoDestino.Name = "DepartamentoDestino";
-            this.DepartamentoDestino.Size = new System.Drawing.Size(846, 20);
+            this.DepartamentoDestino.Size = new System.Drawing.Size(960, 20);
             this.DepartamentoDestino.TabIndex = 47;
             // 
             // DepartamentoOrigem
             // 
-            this.DepartamentoOrigem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DepartamentoOrigem.Location = new System.Drawing.Point(3, 21);
+            this.DepartamentoOrigem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DepartamentoOrigem.Location = new System.Drawing.Point(0, 21);
             this.DepartamentoOrigem.Name = "DepartamentoOrigem";
-            this.DepartamentoOrigem.Size = new System.Drawing.Size(846, 20);
+            this.DepartamentoOrigem.Size = new System.Drawing.Size(960, 20);
             this.DepartamentoOrigem.TabIndex = 49;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.DepartamentoDestino);
             this.panel1.Controls.Add(this.DepartamentoOrigem);
             this.panel1.Controls.Add(this.lblDepartamentoOrigem);
             this.panel1.Controls.Add(this.lblDepartamentoDestino);
-            this.panel1.Location = new System.Drawing.Point(9, 266);
+            this.panel1.Location = new System.Drawing.Point(9, 294);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(863, 87);
+            this.panel1.Size = new System.Drawing.Size(963, 87);
             this.panel1.TabIndex = 50;
             // 
             // frmProtocolo
@@ -330,7 +337,7 @@ namespace Fiscalizacao
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnFechar;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(984, 749);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Observacao);
             this.Controls.Add(this.lblTramites);

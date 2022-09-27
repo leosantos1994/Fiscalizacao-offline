@@ -26,9 +26,9 @@ namespace Fiscalizacao.Repository
         {
             return ctx.Pessoa
                 .Include(x => x.ProcessoRepresentado)
-                .Include(x => x.ProcessoRepresentate)
+                .Include(x => x.ProcessoRepresentante)
                 .Include(x => x.ProcessoRepresentadoFiscalizacao)
-                .Include(x => x.ProcessoRepresentateFiscalizacao)
+                .Include(x => x.ProcessoRepresentanteFiscalizacao)
                 .Include(x => x.Financeiro)
                 .Include(x => x.Protocolo)
                 .Include(x => x.ProtocoloPJ)
@@ -54,9 +54,9 @@ namespace Fiscalizacao.Repository
         {
             return ctx.Pessoa
                .Include(x => x.ProcessoRepresentado)
-               .Include(x => x.ProcessoRepresentate)
+               .Include(x => x.ProcessoRepresentante)
                .Include(x => x.ProcessoRepresentadoFiscalizacao)
-               .Include(x => x.ProcessoRepresentateFiscalizacao)
+               .Include(x => x.ProcessoRepresentanteFiscalizacao)
                .Include(x => x.Financeiro)
                .Include(x => x.Protocolo)
                .Include(x => x.ProtocoloPJ)
@@ -70,16 +70,16 @@ namespace Fiscalizacao.Repository
 
         public bool PessoaExiste(int id) => ctx.Pessoa.Any(p => p.Id == id);
 
-        public void TratarPessoaNaoExistente(List<int?> pessoas)
+        public void TratarPessoaNaoExistente(List<int> pessoas)
         {
             var pessoaDAO = new QuellonPessoaDAO(QuellonConfig.Instancia);
             foreach (var pessoa in pessoas)
             {
-                if (pessoa != null && !PessoaExiste(pessoa.Value))
+                if (pessoa > 0 && !PessoaExiste(pessoa))
                 {
                     InsereOuAtualiza(pessoaDAO.BuscarInformacoesPessoas(pessoa.ToString()));
                 }
-                if (pessoa != null && !PessoaExiste(pessoa.Value))
+                if (pessoa > 0 && !PessoaExiste(pessoa))
                 {
                     InsereOuAtualiza(pessoaDAO.BuscarInformacoesPessoas(pessoa.ToString()));
                 }

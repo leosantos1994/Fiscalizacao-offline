@@ -40,7 +40,7 @@ namespace Fiscalizacao
         }
 
         private void AdicionarDadosFicticiosGridInfracoes()
-        { 
+        {
             dgvProcessosInfracoes.Rows.Clear();
 
             var listaInfracoes = new List<InfracaoModel>();
@@ -49,7 +49,7 @@ namespace Fiscalizacao
             {
                 Ano = 2022,
                 Autuado = "João Souza",
-                Fiscal ="Amaro Silveira",
+                Fiscal = "Amaro Silveira",
                 Situacao = "Concluída"
             });
             listaInfracoes.Add(new InfracaoModel()
@@ -71,9 +71,6 @@ namespace Fiscalizacao
                 dgvProcessosInfracoes.Rows.Add(item.Ano, item.Autuado, item.Fiscal, item.Situacao);
             }
         }
-
-
-
         public class InfracaoModel
         {
             public int Ano { get; set; }
@@ -83,7 +80,7 @@ namespace Fiscalizacao
         }
         private void AdicionarDadosFicticiosGridNotificacoes()
         {
-            
+
             dgvProcessosNotificacoes.Rows.Clear();
 
             var listaNotificacoes = new List<NotificacaoModel>();
@@ -93,7 +90,7 @@ namespace Fiscalizacao
                 NumeroDaNotificacao = 0012022,
                 DataRecebimento = "08/09/2022",
                 PrazoRegularizacao = 2022,
-                
+
             });
             listaNotificacoes.Add(new NotificacaoModel()
             {
@@ -109,7 +106,7 @@ namespace Fiscalizacao
             });
             foreach (var item in listaNotificacoes)
             {
-                dgvProcessosNotificacoes.Rows.Add(item.NumeroDaNotificacao, item.DataRecebimento, item.PrazoRegularizacao );
+                dgvProcessosNotificacoes.Rows.Add(item.NumeroDaNotificacao, item.DataRecebimento, item.PrazoRegularizacao);
             }
         }
         public class NotificacaoModel
@@ -135,15 +132,15 @@ namespace Fiscalizacao
                 Fase = "Recurso",
                 Processo = "12345",
             });
-            listaTramites.Add(new TramitesModel() 
+            listaTramites.Add(new TramitesModel()
             {
                 Data = DateTime.Today.AddDays(-30).ToString(),
                 Fase = "Recurso",
                 Processo = "123456",
             });
-            foreach(var item in listaTramites)
+            foreach (var item in listaTramites)
             {
-                dgvProcessosTramitesProcessuais.Rows.Add(item.Data, item.Fase, item.Processo); 
+                dgvProcessosTramitesProcessuais.Rows.Add(item.Data, item.Fase, item.Processo);
             }
         }
         public class TramitesModel
@@ -157,23 +154,20 @@ namespace Fiscalizacao
         {
             new frmInfracoes().ShowDialog();
         }
-
         private void dgvProcessosNotificacoes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             new frmNotificacao().ShowDialog();
         }
-
         private void dgvProcessosTramitesProcessuais_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             new frmTramitesProcessuais().ShowDialog();
         }
-
         private void lblInfracoes_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void dgvProcessosInfracoes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Comarca_TextChanged(object sender, EventArgs e)
         {
 
         }

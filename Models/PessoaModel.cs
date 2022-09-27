@@ -15,9 +15,9 @@ namespace Fiscalizacao.Models
         public virtual ICollection<HistoricoOcorrenciaModel> Ocorrencia { get; set; }
         public virtual ICollection<FormacaoAcademicaModel> Formacao { get; set; }
         public virtual ICollection<ProcessoModel> ProcessoRepresentado { get; set; }
-        public virtual ICollection<ProcessoModel> ProcessoRepresentate { get; set; }
+        public virtual ICollection<ProcessoModel> ProcessoRepresentante { get; set; }
         public virtual ICollection<ProcessoFiscalizacaoModel> ProcessoRepresentadoFiscalizacao { get; set; }
-        public virtual ICollection<ProcessoFiscalizacaoModel> ProcessoRepresentateFiscalizacao { get; set; }
+        public virtual ICollection<ProcessoFiscalizacaoModel> ProcessoRepresentanteFiscalizacao { get; set; }
 
         public bool Inadimplente { get; set; }
         public bool CorrespondenciaResidencial { get; set; }
@@ -27,14 +27,12 @@ namespace Fiscalizacao.Models
         public DateTime DataUltimaVisita { get; set; }
         public string Nome { get; set; }
         public string CPFCNPJ { get; set; }
-        public string SubUnidadeAtual { get; set; }
         public string NumeroProcesso { get; set; }
         public string NumeroProcessoAntigo { get; set; }
         public string NomeAbreviado { get; set; }
         public string NomeSocial { get; set; }
         public string RegistroConselho { get; set; }
         public string LogradouroResidencial { get; set; }
-        public string LogradouroComercial { get; set; }
         public string ComplementoResidencial { get; set; }
         public string NumeroResidencial { get; set; }
         public string BairroResidencial { get; set; }
@@ -45,7 +43,7 @@ namespace Fiscalizacao.Models
         public string EmailResidencial { get; set; }
         public string ComplementoComercial { get; set; }
         public string NumeroComercial { get; set; }
-        public string BairroComercial { get; set; }
+        public string BairroComecial { get; set; }
         public string TelefoneComercial { get; set; }
         public string TelefoneCEmailComercialomercial { get; set; }
         public string CEPResidencial { get; set; }
@@ -57,5 +55,6 @@ namespace Fiscalizacao.Models
         public string StuacaoAtual { get; set; }
         public string ComplementoSituacao { get; set; }
         public string MotivoSituacao { get; set; }
+        public string SubUnidadeAtual { get; set; }
     }
 }

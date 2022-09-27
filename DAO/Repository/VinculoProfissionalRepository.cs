@@ -17,8 +17,8 @@ namespace Fiscalizacao.Repository
         {
             var lista = models.GroupBy(p => p.Id).Select(g => g.First()).ToList();
 
-            var pessoas = models.Select(x => x.PessoaId).ToList();
-            pessoas.AddRange(models.Select(x => x.PessoaJuridicaId).ToList());
+            var pessoas = models.Select(x => x.PessoaId.Value).ToList();
+            pessoas.AddRange(models.Select(x => x.PessoaJuridicaId.Value).ToList());
             new PessoaRepository(ctx).TratarPessoaNaoExistente(pessoas);
 
             ctx.VinculoProfissional.BulkUpdate(models);

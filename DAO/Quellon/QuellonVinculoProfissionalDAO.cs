@@ -43,6 +43,8 @@ namespace Fiscalizacao.Quellon
             xml.addColumnSelect("Situacao", "Situacao");
             xml.addColumnSelect("Turno.Descricao", "Turno");
             xml.addColumnSelect("TipoART.Descricao", "TipoART");
+            xml.addColumnSelect("Tipo", "VinculoProfissionalTipo");
+
         }
     }
 }
